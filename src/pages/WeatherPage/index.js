@@ -1,5 +1,13 @@
+import Header from "../../components/Header";
+import { Link } from "react-router-dom";
+
 const WeatherPage = () => {
-  return <div>Weather page</div>;
+  return (
+    <div>
+      <Header />
+      Weather page
+    </div>
+  );
 };
 
 export default WeatherPage;
