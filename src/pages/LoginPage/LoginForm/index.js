@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 const { Title } = Typography;
 
 const LoginForm = () => {
+  const [meo, setmeo] = useState('');
+  console.log(meo)
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
     if (values.remember) {
