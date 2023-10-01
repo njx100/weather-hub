@@ -1,11 +1,14 @@
 import Header from "../../components/Header";
-import { Link } from "react-router-dom";
+import CitiesList from "./CitiesList";
+import "./style.css";
 
 const WeatherPage = () => {
   return (
-    <div>
+    <div className="weather-page">
       <Header />
-      Weather page
+      <div className="container">
+        <CitiesList />
+      </div>
     </div>
   );
 };

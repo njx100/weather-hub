@@ -1,0 +1,7 @@
+.weather-page {
+  height: 100%;
+  background-image: url("/src/utilities/images/background/vecteezy_blue-mountain-landscape-background-illustration_7692868.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

@@ -4,7 +4,7 @@ const NewsPage = () => {
   return (
     <div>
       <Header />
-      News Page
+      News page
     </div>
   );
 };
