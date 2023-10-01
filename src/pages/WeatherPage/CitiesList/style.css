@@ -1,6 +1,7 @@
 .cities-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 5rem;
+  text-align: center;
 }

@@ -1,3 +1,4 @@
+import AddCity from "./AddCity";
 import City from "./City";
 import "./style.css";
 
@@ -10,6 +11,7 @@ const CitiesList = () => {
       <City name="Tokyo" temperature={20} weatherStatus="thunder-storm" />
       <City name="Sydney" temperature={29} weatherStatus="partly-cloudy" />
       <City name="Paris" temperature={19} weatherStatus="night" />
+      <AddCity />
     </div>
   );
 };

@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 4px 5px 30px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.nav-link a {
+  margin: 1rem;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.logo {
+  background: url(../../utilities/images/logo-package/svg/logo-color.svg);
+  background-position: cover;
+}
