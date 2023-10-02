@@ -17,12 +17,12 @@ const SearchPopup = ({ setIsPopupOpen }) => {
   const cityApi = "https://api.api-ninjas.com/v1/geocoding?city=";
   const apiKey = "Lx/04NVq3uaisIHXy5WPcQ==bjnoRIGlsFFXZUfj";
 
-  const handleSearch = async () => {
-    if (cityToSearch) {
+  const handleSearch = async (city) => {
+    if (city) {
       setIsSearching(true);
       const response = await axios({
         method: "get",
-        url: cityApi + cityToSearch,
+        url: cityApi + city,
         headers: { "X-Api-Key": apiKey },
       });
       setCities(response.data);
@@ -61,7 +61,7 @@ const SearchPopup = ({ setIsPopupOpen }) => {
             setCityToSearch(event.target.value);
             setIsTyping(true);
           }}
-          onSearch={() => handleSearch()}
+          onSearch={() => handleSearch(cityToSearch)}
         />
         <Button
           className="close-btn"
