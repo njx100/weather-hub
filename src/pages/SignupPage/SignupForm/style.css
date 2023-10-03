@@ -1,0 +1,39 @@
+.stylebgr {
+    height: 100vh;
+    background-color: burlywood;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.sign-up-form-page {
+    display: flex;
+    gap: 0.5em;
+    margin: 1em;
+
+    align-items: center;
+    background-color: white;
+    border: 0.5px solid white;
+    border-radius: 10px;
+}
+
+.sign-up-form-right  {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign-up-form-right form {
+    display: flex;
+    flex-direction: column;
+
+}
+.sign-up-form-right form label {
+    color: gray;
+}
+.sign-up-form-left {
+    width: 30%;
+
+}

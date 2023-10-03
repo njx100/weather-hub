@@ -1,76 +1,218 @@
-import { Button, Checkbox, Form, Input } from "antd";
-const onFinish = (values) => {
-  console.log("Success:", values);
-};
-const onFinishFailed = (errorInfo) => {
-  console.log("Failed:", errorInfo);
-};
-const SignupForm = () => (
-  <Form
-    name="basic"
-    labelCol={{
-      span: 8,
-    }}
-    wrapperCol={{
-      span: 16,
-    }}
-    style={{
-      maxWidth: 600,
-    }}
-    initialValues={{
-      remember: true,
-    }}
-    onFinish={onFinish}
-    onFinishFailed={onFinishFailed}
-    autoComplete="off"
-  >
-    <Form.Item
-      label="Username"
-      name="username"
-      rules={[
-        {
-          required: true,
-          message: "Please input your username!",
-        },
-      ]}
-    >
-      <Input />
-    </Form.Item>
+import { useNavigate } from "react-router-dom";
+import { Button, Checkbox, Form, Input, Select } from "antd";
+import "./style.css";
+import { v4 as uuidv4 } from "uuid";
+const { Option } = Select;
 
-    <Form.Item
-      label="Password"
-      name="password"
-      rules={[
-        {
-          required: true,
-          message: "Please input your password!",
-        },
-      ]}
-    >
-      <Input.Password />
-    </Form.Item>
+const SignupForm = ({ data_Account, addUserAccount }) => {
+  const [form] = Form.useForm();
+  const navigate = useNavigate();
 
-    <Form.Item
-      name="remember"
-      valuePropName="checked"
-      wrapperCol={{
-        offset: 8,
-        span: 16,
+  const onFinish = (values) => {
+    const isUserExists = data_Account.some(
+      (account) => account.nickname === values.nickname
+    );
+    const isEmailExists = data_Account.some(
+      (emails) => emails.email === values.email
+    );
+    const isPhoneExists = data_Account.some(
+      (phones) => phones.phone === values.phone
+    );
+    // console.log(isUserExists);
+
+    if (isUserExists) {
+      alert(`Name has already`);
+    } else {
+      if (isEmailExists) {
+        alert(`Email has already`);
+      } else {
+        if (isPhoneExists) {
+          alert(`Phone has already`); 
+        } else {
+          const new_Account = Object.assign(values, { idv2: uuidv4() });
+          addUserAccount(new_Account);
+          console.log(new_Account)
+          alert("Create Account sucsecss")
+          navigate("/login")
+
+        }
+      }
+    }
+  };
+
+  const prefixSelector = (
+    <Form.Item name="prefix" noStyle>
+      <Select
+        style={{
+          width: 70,
+        }}
+      >
+        <Option value="86">+86</Option>
+        <Option value="87">+87</Option>
+      </Select>
+    </Form.Item>
+  );
+
+  return (
+    <Form
+      form={form}
+      name="register"
+      onFinish={onFinish}
+      initialValues={{
+        prefix: "86",
       }}
-    >
-      <Checkbox>Remember me</Checkbox>
-    </Form.Item>
-
-    <Form.Item
-      wrapperCol={{
-        offset: 8,
-        span: 16,
+      layout="vertical"
+      style={{
+        maxWidth: 600,
       }}
+      scrollToFirstError
     >
-      <Button type="primary" htmlType="submit">
-        Submit
-      </Button>
-    </Form.Item>
-  </Form>
-);
+      <Form.Item
+        className="form-style"
+        name="nickname"
+        label="Nickname"
+        tooltip="What do you want others to call you?"
+        rules={[
+          {
+            required: true,
+            message: "Please input your nickname!",
+            whitespace: true,
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+      <Form.Item
+        className="form-style"
+        name="email"
+        label="E-mail"
+        rules={[
+          {
+            type: "email",
+            message: "The input is not valid E-mail!",
+          },
+          {
+            required: true,
+            message: "Please input your E-mail!",
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        className="form-style"
+        name="password"
+        label="Password"
+        rules={[
+          {
+            required: true,
+            message: "Please input your password!",
+          },
+        ]}
+        hasFeedback
+      >
+        <Input.Password />
+      </Form.Item>
+
+      <Form.Item
+        className="form-style"
+        name="confirm"
+        label="Confirm Password"
+        dependencies={["password"]}
+        hasFeedback
+        rules={[
+          {
+            required: true,
+            message: "Please confirm your password!",
+          },
+          ({ getFieldValue }) => ({
+            validator(_, value) {
+              if (!value || getFieldValue("password") === value) {
+                return Promise.resolve();
+              }
+              return Promise.reject(
+                new Error("The new password that you entered do not match!")
+              );
+            },
+          }),
+        ]}
+      >
+        <Input.Password />
+      </Form.Item>
+
+      <Form.Item
+        className="form-style"
+        name="phone"
+        label="Phone Number"
+        rules={[
+          {
+            requireda: true,
+            message: "Please input your phone number!",
+          },
+        ]}
+      >
+        <Input
+          addonBefore={prefixSelector}
+          style={{
+            width: "100%",
+          }}
+        />
+      </Form.Item>
+      <Form.Item
+        className="form-style"
+        name="gender"
+        label="Gender"
+        rules={[
+          {
+            required: true,
+            message: "Please select gender!",
+          },
+        ]}
+      >
+        <Select placeholder="select your gender">
+          <Option value="male">Male</Option>
+          <Option value="female">Female</Option>
+          <Option value="other">Other</Option>
+        </Select>
+      </Form.Item>
+
+      <Form.Item
+        name="agreement"
+        valuePropName="checked"
+        rules={[
+          {
+            validator: (_, value) =>
+              value
+                ? Promise.resolve()
+                : Promise.reject(new Error("Should accept agreement")),
+          },
+        ]}
+      >
+        <Checkbox>
+          I have read the <a href="">agreement</a>
+        </Checkbox>
+      </Form.Item>
+      <Form.Item className="btn-form">
+        <Button
+          size="larget"
+          type="primary"
+          htmlType="submit"
+          // onClick={() => {navigate("/login")}}
+        >
+          Sign Up
+        </Button>
+        <Button
+          type="dashed"
+          size="larget"
+          onClick={() => {
+            navigate("/login");
+          }}
+        >
+          Login
+        </Button>
+      </Form.Item>
+    </Form>
+  );
+};
 export default SignupForm;

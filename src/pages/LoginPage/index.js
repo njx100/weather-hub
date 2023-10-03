@@ -1,10 +1,10 @@
 import LoginForm from "./LoginForm";
 
-const LoginPage = () => {
+const LoginPage = ({ data_Account }) => {
   return (
-    <div>
-      <LoginForm />
-    </div>
+    <>
+      <LoginForm data_Account={data_Account}/>
+    </>
   );
 };
 

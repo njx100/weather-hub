@@ -1,9 +1,11 @@
 import SignupForm from "./SignupForm";
+import "./style.css"
 
-const SignupPage = () => {
+const SignupPage = ({addUserAccount, data_Account}) => {
+  
   return (
-    <div>
-      <SignupForm />
+    <div className="signup-form">
+      <SignupForm addUserAccount={addUserAccount} data_Account={data_Account} />
     </div>
   );
 };
