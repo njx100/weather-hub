@@ -4,9 +4,7 @@ import axios from "axios";
 import "./style.css";
 
 const City = ({ name, latitude, longitude }) => {
-  // console.log(`${name} ${latitude} ${longitude}`);
   const [weather, setWeather] = useState({
-    name: name,
     current: { temp_c: 0 },
   });
   const weatherAPI = "http://api.weatherapi.com/v1/current.json?key=";
@@ -14,11 +12,11 @@ const City = ({ name, latitude, longitude }) => {
   const cardClassName = `city-card city-card-rain`;
 
   const getWeather = async () => {
-    const res = await axios.get(
-      `${weatherAPI}${KEY}&q=${latitude},${longitude}`
-    );
-    console.log(`${weatherAPI}${KEY}&q=${latitude},${longitude}`);
-    setWeather(res.data);
+    if (longitude && latitude) {
+      const url = `${weatherAPI}${KEY}&q=${latitude},${longitude}`;
+      const res = await axios.get(url);
+      setWeather(res.data);
+    }
   };
 
   useEffect(() => {
