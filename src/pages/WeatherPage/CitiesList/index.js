@@ -2,20 +2,26 @@ import { useState } from "react";
 import AddCity from "./AddCity";
 import City from "./City";
 import SearchPopup from "./SearchPopup";
-
+import { v4 as uuidv4 } from "uuid";
+// import axios from "axios";
 import "./style.css";
 
-const CitiesList = () => {
+const CitiesList = ({ favCities }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   return (
     <div className="cities-list">
-      <City name="New York" temperature={30} weatherStatus="sunny" />
-      <City name="Tokyo" temperature={29} weatherStatus="rain" />
-      <City name="Ho Chi Minh City" temperature={36} weatherStatus="snow" />
-      <City name="Bangkok" temperature={20} weatherStatus="thunder-storm" />
-      <City name="Sydney" temperature={29} weatherStatus="partly-cloudy" />
-      <City name="Paris" temperature={19} weatherStatus="night" />
+      {favCities.map(({ name, latitude, longitude }) => {
+        return (
+          <City
+            key={uuidv4()}
+            name={name}
+            latitude={latitude}
+            longitude={longitude}
+          />
+        );
+      })}
+
       <AddCity setIsPopupOpen={setIsPopupOpen} isPopupOpen={isPopupOpen} />
       {isPopupOpen ? <SearchPopup setIsPopupOpen={setIsPopupOpen} /> : null}
     </div>
