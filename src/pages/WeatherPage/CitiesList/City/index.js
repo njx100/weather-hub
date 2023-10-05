@@ -4,7 +4,7 @@ import axios from "axios";
 import "./style.css";
 
 const City = ({ name, latitude, longitude }) => {
-  console.log(`${name} ${latitude} ${longitude}`);
+  // console.log(`${name} ${latitude} ${longitude}`);
   const [weather, setWeather] = useState({
     name: name,
     current: { temp_c: 0 },
