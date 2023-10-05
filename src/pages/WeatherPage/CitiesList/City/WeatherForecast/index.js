@@ -16,27 +16,27 @@ const WeatherForecast = () => {
     <div className="weather-forecast-container">
       <div className="weather-forecast">
         <div>Mon</div>
-        <img src={sunnyIcon} />
+        <img src={sunnyIcon} alt="sunny" />
         <div className="weather-forecast-temp">34&deg;</div>
       </div>
       <div className="weather-forecast">
         <div>Tue</div>
-        <img src={cloudyIcon} />
+        <img src={cloudyIcon} alt="cloudy" />
         <div className="weather-forecast-temp">34&deg;</div>
       </div>
       <div className="weather-forecast">
         <div>Wed</div>
-        <img src={rainIcon} />
+        <img src={rainIcon} alt="rain" />
         <div className="weather-forecast-temp">34&deg;</div>
       </div>
       <div className="weather-forecast">
         <div>Thu</div>
-        <img src={snowIcon} />
+        <img src={snowIcon} alt="snow" />
         <div className="weather-forecast-temp">34&deg;</div>
       </div>
       <div className="weather-forecast">
         <div>Fri</div>
-        <img src={thunderStormIcon} />
+        <img src={thunderStormIcon} alt="thunder storm" />
         <div className="weather-forecast-temp">34&deg;</div>
       </div>
     </div>

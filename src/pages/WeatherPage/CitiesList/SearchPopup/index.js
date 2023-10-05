@@ -40,7 +40,7 @@ const SearchPopup = ({ setIsPopupOpen }) => {
       cities.length === 0 ? setUnableToFind(true) : setUnableToFind(false);
     }
     setCount(1);
-  }, [cities, cityToSearch]);
+  }, [cities, cityToSearch, count]);
 
   return (
     <div
