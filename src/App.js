@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -25,8 +26,9 @@ function App() {
   };
 
   return (
-    <BrowserRouter className="App">
+    <div className="App">
       <Routes>
+
         <Route
           path="/login"
           element={<LoginPage data_Account={data_Account} />}
@@ -43,7 +45,7 @@ function App() {
         <Route path="/" element={<WeatherPage />} />
         <Route path="/news" element={<NewsPage />} />
       </Routes>
-    </BrowserRouter>
+    </div>
   );
 }
 

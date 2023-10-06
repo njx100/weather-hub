@@ -1,0 +1,40 @@
+.add-city-card {
+  width: 310px;
+  height: 800px;
+  position: relative;
+  border-radius: 5rem;
+  padding: 1.5rem 2rem;
+  margin: 1rem;
+  color: white;
+  font-size: 2rem;
+  opacity: 0.85;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all ease-out 200ms;
+}
+
+.add-city-card:hover {
+  border: solid orange 2px;
+}
+
+.plus-icon {
+  font-size: 5rem;
+  transition: all ease-out 250ms;
+}
+
+.plus-icon:hover {
+  color: orange;
+}
+
+.add-city-card:active {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
