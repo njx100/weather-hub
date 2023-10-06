@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -7,6 +6,7 @@ import SignupPage from "./pages/SignupPage";
 import WeatherPage from "./pages/WeatherPage";
 import NewsPage from "./pages/NewsPage";
 import "./App.css";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   const [data_Account, setData_Account] = useState([]);
@@ -28,7 +28,6 @@ function App() {
   return (
     <div className="App">
       <Routes>
-
         <Route
           path="/login"
           element={<LoginPage data_Account={data_Account} />}
@@ -42,8 +41,9 @@ function App() {
             />
           }
         />
-        <Route path="/" element={<WeatherPage />} />
+        <Route path="/" exact element={<WeatherPage />} />
         <Route path="/news" element={<NewsPage />} />
+        <Route path="/*" element={<PageNotFound />} />
       </Routes>
     </div>
   );
