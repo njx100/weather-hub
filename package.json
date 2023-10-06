@@ -1,7 +1,7 @@
 {
   "name": "weather-app",
   "version": "0.1.0",
-  "homepage": "https://njx100.github.io/weather-hub",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
@@ -27,7 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build" 
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
