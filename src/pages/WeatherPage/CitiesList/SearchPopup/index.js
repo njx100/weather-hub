@@ -14,16 +14,16 @@ const SearchPopup = ({ setIsPopupOpen }) => {
   const [unableToFind, setUnableToFind] = useState();
   const [count, setCount] = useState(0);
 
-  const cityApi = "https://api.api-ninjas.com/v1/geocoding?city=";
-  const apiKey = "Lx/04NVq3uaisIHXy5WPcQ==bjnoRIGlsFFXZUfj";
+  const CITY_API = "https://api.api-ninjas.com/v1/geocoding?city=";
+  const APIKEY = "Lx/04NVq3uaisIHXy5WPcQ==bjnoRIGlsFFXZUfj";
 
   const handleSearch = async (city) => {
     if (city) {
       setIsSearching(true);
       const response = await axios({
         method: "get",
-        url: cityApi + city,
-        headers: { "X-Api-Key": apiKey },
+        url: CITY_API + city,
+        headers: { "X-Api-Key": APIKEY },
       });
       setCities(response.data);
       setIsSearching(false);
@@ -72,7 +72,7 @@ const SearchPopup = ({ setIsPopupOpen }) => {
           <AiOutlineClose className="close-icon" />
         </Button>
         {unableToFind && !isTyping && (
-          <div className="warning">Your city is not exist!</div>
+          <div className="warning">Your city does not exist!</div>
         )}
         {cities.map((city) => (
           <div className="search-result" onClick={() => handleSelectCity(city)}>
