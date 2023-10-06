@@ -7,7 +7,7 @@ const { Option } = Select;
 const SignupForm = ({ data_Account, addUserAccount }) => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
-
+  console.log('a')
   const onFinish = (values) => {
     const isUserExists = data_Account.some(
       (account) => account.nickname === values.nickname
