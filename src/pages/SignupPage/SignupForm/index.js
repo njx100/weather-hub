@@ -29,7 +29,7 @@ const SignupForm = ({ data_Account, addUserAccount }) => {
         if (isPhoneExists) {
           alert(`Phone has already`); 
         } else {
-          const new_Account = Object.assign(values, { idv2: uuidv4() });
+          const new_Account = Object.assign(values, { id: uuidv4(), favCities: [] });
           addUserAccount(new_Account);
           console.log(new_Account)
           alert("Create Account sucsecss")
@@ -54,7 +54,9 @@ const SignupForm = ({ data_Account, addUserAccount }) => {
   );
 
   return (
+    
     <Form
+      className="signup"
       form={form}
       name="register"
       onFinish={onFinish}
@@ -62,11 +64,9 @@ const SignupForm = ({ data_Account, addUserAccount }) => {
         prefix: "86",
       }}
       layout="vertical"
-      style={{
-        maxWidth: 600,
-      }}
       scrollToFirstError
     >
+      <h2>Create An Account</h2>
       <Form.Item
         className="form-style"
         name="nickname"
@@ -195,15 +195,15 @@ const SignupForm = ({ data_Account, addUserAccount }) => {
       </Form.Item>
       <Form.Item className="btn-form">
         <Button
+        type="primary"
           size="larget"
-          type="primary"
           htmlType="submit"
-          // onClick={() => {navigate("/login")}}
+        className="btn-signup"
+
         >
           Sign Up
         </Button>
         <Button
-          type="dashed"
           size="larget"
           onClick={() => {
             navigate("/login");

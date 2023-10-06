@@ -6,6 +6,7 @@ import SignupPage from "./pages/SignupPage";
 import WeatherPage from "./pages/WeatherPage";
 import NewsPage from "./pages/NewsPage";
 import "./App.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
   const [data_Account, setData_Account] = useState([]);
@@ -42,6 +43,7 @@ function App() {
         />
         <Route path="/" element={<WeatherPage />} />
         <Route path="/news" element={<NewsPage />} />
+
       </Routes>
     </BrowserRouter>
   );
