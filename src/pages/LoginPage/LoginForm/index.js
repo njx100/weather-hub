@@ -1,13 +1,30 @@
-import React from "react";
+
 import { Form, Input, Button, Checkbox, Card } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { Typography } from "antd";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 const { Title } = Typography;
 
-const LoginForm = () => {
+const LoginForm = ({data_Account}) => {
+  const navigate = useNavigate()
+
   const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+    console.log("Received values of form: ", values.username);
+    const isLoginAccount = data_Account.some(account => account.nickname === values.username)
+    const isPassWordAccount = data_Account.some(password => password.password === values.password)
+    console.log(isLoginAccount)
+    if (isLoginAccount) {
+      if (isPassWordAccount) {
+        alert("Login sucsecss")
+        navigate("/")
+
+      } else {
+        alert("Khong dung :>")
+      }
+    } else {
+      alert("Khong co ten nguoi dung")
+    }
     if (values.remember) {
       localStorage.setItem("username", values.username);
       localStorage.setItem("password", values.password);
@@ -25,14 +42,14 @@ const LoginForm = () => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-    >
+    // <div className=""
+    //   style={{
+    //     display: "flex",
+    //     justifyContent: "center",
+    //     alignItems: "center",
+    //     height: "100vh",
+    //   }}
+    // >
       <Card style={{ width: 500 }}>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Title level={2}>Company Logo </Title>
@@ -42,6 +59,7 @@ const LoginForm = () => {
           className="login-form"
           initialValues={{ remember: true }}
           onFinish={onFinish}
+          autoComplete="off"
         >
           <Form.Item
             name="username"
@@ -50,25 +68,24 @@ const LoginForm = () => {
             <Input
               prefix={<UserOutlined className="site-form-item-icon" />}
               placeholder="Username"
+
             />
           </Form.Item>
           <Form.Item
             name="password"
             rules={[{ required: true, message: "Please input your Password!" }]}
           >
-            <Input
+            <Input.Password
               prefix={<LockOutlined className="site-form-item-icon" />}
-              type="password"
-              placeholder="Password"
-            />
-            <a
+              placeholder="Password"/>
+            {/* <a
               style={{ float: "right" }}
               className="login-form-forgot"
               href=""
               onClick={handleForgotPassword}
             >
               Forgot password
-            </a>
+            </a> */}
           </Form.Item>
           <Form.Item>
             <Form.Item name="remember" valuePropName="checked" noStyle>
@@ -79,19 +96,20 @@ const LoginForm = () => {
             <Button
               type="primary"
               htmlType="submit"
+              // onClick={handleLoginSucsecss}
               className="login-form-button"
               block
             >
               Log in
             </Button>
             Don't have an account{" "}
-            <Link to="/signup" onClick={handleRegister}>
-              sign up
-            </Link>
+            <Button 
+            type="none"
+            onClick={() => {navigate("/signup")}}>Sign Up</Button>
           </Form.Item>
         </Form>
       </Card>
-    </div>
+    // </div>
   );
 };
 
