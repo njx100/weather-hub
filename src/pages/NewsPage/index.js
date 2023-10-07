@@ -68,6 +68,7 @@ const NewsPage = () => {
           <hr />
         </div>
       </section>
+
     </div>
   );
 };
