@@ -104,6 +104,7 @@ const LoginForm = ({data_Account}) => {
             </Button>
             Don't have an account{" "}
             <Button 
+            style={{padding:0}}
             type="none"
             onClick={() => {navigate("/signup")}}>Sign Up</Button>
           </Form.Item>

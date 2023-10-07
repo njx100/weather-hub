@@ -1,0 +1,16 @@
+.outer {
+/* From https://css.glass */
+background: rgba(116, 167, 199, 0.46);
+
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7.4px);
+-webkit-backdrop-filter: blur(7.4px);
+}
+
+.middle {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

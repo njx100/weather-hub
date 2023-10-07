@@ -6,8 +6,8 @@ import SignupPage from "./pages/SignupPage";
 import WeatherPage from "./pages/WeatherPage";
 import NewsPage from "./pages/NewsPage";
 import "./App.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import PageNotFound from "./pages/PageNotFound";
-
 function App() {
   const [data_Account, setData_Account] = useState([]);
   const url_link = "https://6518f495818c4e98ac5ffd9f.mockapi.io/signup";
@@ -43,7 +43,9 @@ function App() {
         />
         <Route path="/" exact element={<WeatherPage />} />
         <Route path="/news" element={<NewsPage />} />
+
         <Route path="/*" element={<PageNotFound />} />
+
       </Routes>
     </div>
   );
