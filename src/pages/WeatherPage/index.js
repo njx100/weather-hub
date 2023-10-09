@@ -3,6 +3,20 @@ import Header from "../../components/Header";
 import CitiesList from "./CitiesList";
 import { DEFAULT_USER } from "../../utilities/user";
 import axios from "axios";
+import {
+  Audio,
+  BallTriangle,
+  Bars,
+  Circles,
+  Grid,
+  Hearts,
+  Oval,
+  Puff,
+  Rings,
+  SpinningCircles,
+  TailSpin,
+  ThreeDots,
+} from "@agney/react-loading";
 
 // import { v4 as uuidv4 } from "uuid";
 import "./style.css";
@@ -28,7 +42,13 @@ const WeatherPage = () => {
     <div className="weather-page">
       <Header userName={userName} />
       <div className="container">
-        {!isLoading ? <CitiesList favCities={favCities} /> : null}
+        {!isLoading ? (
+          <CitiesList favCities={favCities} />
+        ) : (
+          <div className="loading-container">
+            <Puff className="loading-icon" />
+          </div>
+        )}
       </div>
     </div>
   );

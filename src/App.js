@@ -6,7 +6,7 @@ import SignupPage from "./pages/SignupPage";
 import WeatherPage from "./pages/WeatherPage";
 import NewsPage from "./pages/NewsPage";
 import "./App.css";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import PageNotFound from "./pages/PageNotFound";
 function App() {
   const [data_Account, setData_Account] = useState([]);
@@ -33,7 +33,7 @@ function App() {
           element={<LoginPage data_Account={data_Account} />}
         />
         <Route
-          path="/signup"
+          path="signup"
           element={
             <SignupPage
               addUserAccount={addUserAccount}
@@ -41,11 +41,10 @@ function App() {
             />
           }
         />
-        <Route path="/" exact element={<WeatherPage />} />
-        <Route path="/news" element={<NewsPage />} />
+        <Route path="" exact element={<WeatherPage />} />
+        <Route path="news" element={<NewsPage />} />
 
-        <Route path="/*" element={<PageNotFound />} />
-
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );

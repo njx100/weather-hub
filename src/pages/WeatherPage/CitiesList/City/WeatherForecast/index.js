@@ -13,7 +13,7 @@ const WeatherForecast = ({ name, forecast }) => {
     "https://raw.githubusercontent.com/Makin-Things/weather-icons/master/animated/thunderstorms.svg";
 
   const { forecastday } = forecast;
-  console.log(forecastday[0]);
+  console.log(forecastday[0].day);
 
   return (
     <div className="weather-forecast-container">
