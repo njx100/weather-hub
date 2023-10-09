@@ -28,7 +28,7 @@ const NewsPage = () => {
     <div className="bgr-color">
       <Header />
       {dataNews.slice(11, 12).map((data) => (
-        <MainTop data={data}/>
+        <MainTop data={data} />
       ))}
 
       {/* =======Main content ===== */}
@@ -38,7 +38,10 @@ const NewsPage = () => {
             {/* StoryForYouLeft */}
             <div className="col-lg-9">
               <div class="mb-4">
-                <h2 class="m-0 center-h2"><Icon.Book color="white" />Today's top highlights</h2>
+                <h2 class="m-0 center-h2">
+                  <Icon.Book color="white" />
+                  Today's top highlights
+                </h2>
                 <p>
                   Latest breaking news, pictures, videos, and special reports
                 </p>
@@ -63,12 +66,11 @@ const NewsPage = () => {
               </div>
             </div>
             {/* StoryForYouRoght */}
-            <StoryForYouRight/>
+            <StoryForYouRight />
           </div>
           <hr />
         </div>
       </section>
-
     </div>
   );
 };

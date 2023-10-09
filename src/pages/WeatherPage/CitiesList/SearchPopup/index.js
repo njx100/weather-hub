@@ -62,6 +62,8 @@ const SearchPopup = ({ setIsPopupOpen }) => {
             setIsTyping(true);
           }}
           onSearch={() => handleSearch(cityToSearch)}
+          onKeyDown={(event) => event.key === "Escape" && setIsPopupOpen(false)}
+          autoFocus
         />
         <Button
           className="close-btn"

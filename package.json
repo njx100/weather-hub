@@ -4,6 +4,7 @@
   "homepage": "https://njx100.github.io/weather-hub",
   "private": true,
   "dependencies": {
+    "@agney/react-loading": "^0.1.2",
     "@ant-design/icons": "^5.2.6",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -11,6 +12,7 @@
     "antd": "^5.9.4",
     "axios": "^1.5.1",
     "bootstrap": "^5.3.2",
+    "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.0",
     "react-dom": "^18.2.0",
