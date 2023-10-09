@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route
-          path="/login"
+          path="login"
           element={<LoginPage data_Account={data_Account} />}
         />
         <Route
