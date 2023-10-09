@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route
-          path="/login"
+          path="login"
           element={<LoginPage data_Account={data_Account} />}
         />
         <Route
@@ -41,7 +41,7 @@ function App() {
             />
           }
         />
-        <Route path="" exact element={<WeatherPage />} />
+        <Route path="/" exact element={<WeatherPage />} />
         <Route path="news" element={<NewsPage />} />
 
         <Route path="*" element={<PageNotFound />} />
