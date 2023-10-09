@@ -41,7 +41,7 @@ function App() {
             />
           }
         />
-        <Route path="/" exact element={<WeatherPage />} />
+        <Route path="" exact element={<WeatherPage />} />
         <Route path="news" element={<NewsPage />} />
 
         <Route path="*" element={<PageNotFound />} />
