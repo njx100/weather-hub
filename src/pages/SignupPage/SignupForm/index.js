@@ -4,35 +4,33 @@ import "./style.css";
 import { v4 as uuidv4 } from "uuid";
 const { Option } = Select;
 
-const SignupForm = ({ data_Account, addUserAccount }) => {
+const SignupForm = ({ dataAccount, addUserAccount }) => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
-  console.log('a')
   const onFinish = (values) => {
-    const isUserExists = data_Account.some(
+    const isUserExists = dataAccount.some(
       (account) => account.nickname === values.nickname
     );
-    const isEmailExists = data_Account.some(
+    const isEmailExists = dataAccount.some(
       (emails) => emails.email === values.email
     );
-    const isPhoneExists = data_Account.some(
+    const isPhoneExists = dataAccount.some(
       (phones) => phones.phone === values.phone
     );
-    // console.log(isUserExists);
 
     if (isUserExists) {
-      alert(`Name has already`);
+      alert(`Name has already`); // test
     } else {
       if (isEmailExists) {
-        alert(`Email has already`);
+        alert(`Email has already`); // test
       } else {
         if (isPhoneExists) {
-          alert(`Phone has already`); 
+          alert(`Phone has already`);  // test
         } else {
-          const new_Account = Object.assign(values, { id: uuidv4(), favCities: [] });
-          addUserAccount(new_Account);
-          console.log(new_Account)
-          alert("Create Account sucsecss")
+          const newAccount = Object.assign(values, { idv4: uuidv4(), favCities: [] });
+          addUserAccount(newAccount);
+          console.log(newAccount)
+          alert("Create Account sucsecss") // test
           navigate("/login")
 
         }
@@ -69,7 +67,7 @@ const SignupForm = ({ data_Account, addUserAccount }) => {
       <h2>Create An Account</h2>
       <Form.Item
         className="form-style"
-        name="nickname"
+        name="username"
         label="Nickname"
         tooltip="What do you want others to call you?"
         rules={[

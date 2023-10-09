@@ -9,20 +9,20 @@ import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import PageNotFound from "./pages/PageNotFound";
 function App() {
-  const [data_Account, setData_Account] = useState([]);
-  const url_link = "https://6518f495818c4e98ac5ffd9f.mockapi.io/signup";
+  const [dataAccount, setDataAccount] = useState([]);
+  const urllink = "https://6518f495818c4e98ac5ffd9f.mockapi.io/signup";
 
   useEffect(() => {
     const fetchTodo = async () => {
-      const response = await axios.get(url_link);
-      setData_Account(response.data);
+      const response = await axios.get(urllink);
+      setDataAccount(response.data);
     };
     fetchTodo();
   }, []);
 
   const addUserAccount = (account) => {
-    setData_Account((pre) => [...pre, account]);
-    axios.post(url_link, account).then((res) => console.log(res));
+    setDataAccount((pre) => [...pre, account]);
+    axios.post(urllink, account).then((res) => console.log(res));
   };
 
   return (
@@ -30,14 +30,14 @@ function App() {
       <Routes>
         <Route
           path="/login"
-          element={<LoginPage data_Account={data_Account} />}
+          element={<LoginPage dataAccount={dataAccount} />}
         />
         <Route
           path="/signup"
           element={
             <SignupPage
               addUserAccount={addUserAccount}
-              data_Account={data_Account}
+              dataAccount={dataAccount}
             />
           }
         />

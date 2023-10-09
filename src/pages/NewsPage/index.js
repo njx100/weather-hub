@@ -8,15 +8,17 @@ import StoryForYouRight from "./StoryForYou/StoryForYouRight";
 import MainTop from "./MainTopStart/MainTop";
 
 const NewsPage = () => {
-  const key = "gtIzOCHkHAa2NhIBjC7Zm0tMZz6AFHAy";
-  const url_link = `https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=${key}`;
+  // const key = "gtIzOCHkHAa2NhIBjC7Zm0tMZz6AFHAy";
+  const key = "aa7a66eab03d4cdc902dfa8e339fdab9";
+  // const urlLink = `https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=${key}`;
+  const urlLink = `https://newsapi.org/v2/everything?q=weather&q=nature&domains=yahoo.com,weather.com,bbc.com,weather.gov&sortBy=relevancy&apiKey=${key}`;
   const [dataNews, setdataNews] = useState([]);
+  const [visibleItems, setVisibleItems] = useState(8);
 
-  const [visibleItems, setVisibleItems] = useState(4);
   useEffect(() => {
     const fetchDataNews = async () => {
-      const response = await axios.get(url_link);
-      setdataNews(response.data.results);
+      const response = await axios.get(urlLink);
+      setdataNews(response.data.articles);
     };
     fetchDataNews();
   }, []);
@@ -24,10 +26,12 @@ const NewsPage = () => {
   const handleLoadMore = () => {
     setVisibleItems((pre) => pre + 4);
   };
+
+
   return (
     <div className="bgr-color">
       <Header />
-      {dataNews.slice(11, 12).map((data) => (
+      {dataNews.slice(0, 1).map((data) => (
         <MainTop data={data}/>
       ))}
 
@@ -46,7 +50,7 @@ const NewsPage = () => {
               <div class="row gy-4">
                 {dataNews
                   .filter((data) => data.title !== "")
-                  .slice(0, visibleItems)
+                  .slice(4, visibleItems)
                   .map((data) => (
                     <StoryForYou data={data} />
                   ))}
