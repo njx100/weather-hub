@@ -11,7 +11,7 @@ const City = ({ name, latitude, longitude }) => {
   const [isLoading, setIsLoading] = useState(true);
   const { current, forecast } = weather;
 
-  const weatherAPI = "http://api.weatherapi.com/v1/forecast.json?key=";
+  const weatherAPI = "https://api.weatherapi.com/v1/forecast.json?key=";
   const KEY = "60b46f95aa494b69bbc15546230710";
   const cardClassName = `city-card city-card-rain`;
 
