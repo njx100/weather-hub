@@ -24,7 +24,6 @@ const WeatherForecast = ({ name, forecast }) => {
           <img src={rainIcon} alt="rain" />
           <div className="weather-forecast-temp">
             <div>{Math.round(forecastOneDay.day.maxtemp_c)}&deg;</div>
-
             <div className="min-temp">
               {Math.round(forecastOneDay.day.mintemp_c)}&deg;
             </div>
