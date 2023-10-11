@@ -22,10 +22,14 @@
   flex-direction: column;
 }
 
-.weather-forecast img {
+/* .weather-forecast img {
   margin-top: 0.5rem;
-}
+} */
 
 .min-temp {
   color: rgb(70, 139, 199);
 }
+
+/* .forecast-icon {
+  margin: 0;
+} */
