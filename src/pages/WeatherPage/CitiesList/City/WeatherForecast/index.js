@@ -1,5 +1,6 @@
 import "./style.css";
 import { v4 as uuidv4 } from "uuid";
+import dayjs from "dayjs";
 
 const WeatherForecast = ({ name, forecast }) => {
   const sunnyIcon =
@@ -14,17 +15,19 @@ const WeatherForecast = ({ name, forecast }) => {
     "https://raw.githubusercontent.com/Makin-Things/weather-icons/master/animated/thunderstorms.svg";
 
   const { forecastday } = forecast;
-  console.log(forecastday);
 
   return (
     <div className="weather-forecast-container">
-      {forecastday.map((forecastOneDay) => (
+      {forecastday.slice(1, 6).map((forecastOneDay) => (
         <div key={uuidv4()} className="weather-forecast">
-          <div>Mon</div>
+          <div>{dayjs(forecastOneDay.date).format("ddd")}</div>
           <img src={rainIcon} alt="rain" />
           <div className="weather-forecast-temp">
             <div>{Math.round(forecastOneDay.day.maxtemp_c)}&deg;</div>
-            <div>{Math.round(forecastOneDay.day.mintemp_c)}&deg;</div>
+
+            <div className="min-temp">
+              {Math.round(forecastOneDay.day.mintemp_c)}&deg;
+            </div>
           </div>
         </div>
       ))}

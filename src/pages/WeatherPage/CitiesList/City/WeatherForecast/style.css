@@ -25,3 +25,7 @@
 .weather-forecast img {
   margin-top: 0.5rem;
 }
+
+.min-temp {
+  color: rgb(70, 139, 199);
+}
