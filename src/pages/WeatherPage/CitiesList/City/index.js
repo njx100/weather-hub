@@ -13,11 +13,12 @@ const City = ({ name, latitude, longitude }) => {
 
   const weatherAPI = "https://api.weatherapi.com/v1/forecast.json?key=";
   const KEY = "60b46f95aa494b69bbc15546230710";
+  const apiEndPoint = "&days=6&aqi=no&alerts=no";
   const cardClassName = `city-card city-card-rain`;
 
   const getWeather = async () => {
     setIsLoading(true);
-    const weatherURL = `${weatherAPI}${KEY}&q=${latitude},${longitude}`;
+    const weatherURL = `${weatherAPI}${KEY}&q=${latitude},${longitude}${apiEndPoint}`;
     const res = await axios.get(weatherURL);
     setWeather(res.data);
     setIsLoading(false);
