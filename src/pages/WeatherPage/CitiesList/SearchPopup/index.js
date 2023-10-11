@@ -5,7 +5,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import axios from "axios";
 const { Search } = Input;
 
-const SearchPopup = ({ setIsPopupOpen }) => {
+const SearchPopup = ({ setIsPopupOpen, addCity }) => {
   const popupEl = useRef();
   const [isSearching, setIsSearching] = useState(false);
   const [cityToSearch, setCityToSearch] = useState("");
@@ -33,6 +33,8 @@ const SearchPopup = ({ setIsPopupOpen }) => {
 
   const handleSelectCity = (city) => {
     console.log(city);
+    setIsPopupOpen(false);
+    addCity(city);
   };
 
   useEffect(() => {

@@ -7,7 +7,7 @@ const AddCity = ({ setIsPopupOpen, isPopupOpen }) => {
       className="add-city-card"
       onClick={() => {
         setIsPopupOpen(true);
-        console.log(isPopupOpen);
+        // console.log(isPopupOpen);
       }}
     >
       <AiFillPlusCircle className="plus-icon" />

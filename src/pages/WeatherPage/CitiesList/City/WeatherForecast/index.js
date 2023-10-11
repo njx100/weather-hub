@@ -15,13 +15,18 @@ const WeatherForecast = ({ name, forecast }) => {
     "https://raw.githubusercontent.com/Makin-Things/weather-icons/master/animated/thunderstorms.svg";
 
   const { forecastday } = forecast;
+  // console.log(forecastday[0].day.condition);
 
   return (
     <div className="weather-forecast-container">
       {forecastday.slice(1, 6).map((forecastOneDay) => (
         <div key={uuidv4()} className="weather-forecast">
           <div>{dayjs(forecastOneDay.date).format("ddd")}</div>
-          <img src={rainIcon} alt="rain" />
+          <img
+            className="forecast-icon"
+            src={forecastOneDay.day.condition.icon}
+            alt="rain"
+          />
           <div className="weather-forecast-temp">
             <div>{Math.round(forecastOneDay.day.maxtemp_c)}&deg;</div>
             <div className="min-temp">

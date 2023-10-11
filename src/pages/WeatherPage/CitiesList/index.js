@@ -8,6 +8,7 @@ import "./style.css";
 
 const CitiesList = ({ favCities }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [cities, setCities] = useState(favCities);
 
   return (
     <div className="cities-list">
@@ -23,7 +24,9 @@ const CitiesList = ({ favCities }) => {
       })}
 
       <AddCity setIsPopupOpen={setIsPopupOpen} isPopupOpen={isPopupOpen} />
-      {isPopupOpen ? <SearchPopup setIsPopupOpen={setIsPopupOpen} /> : null}
+      {isPopupOpen ? (
+        <SearchPopup setIsPopupOpen={setIsPopupOpen} addCity={addCity} />
+      ) : null}
     </div>
   );
 };
