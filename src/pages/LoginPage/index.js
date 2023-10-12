@@ -4,7 +4,7 @@ const LoginPage = ({ data_Account, setUserId }) => {
   return (
     <div className="outer">
       <div className="middle section">
-        <LoginForm data_Account={data_Account} setUserId={setUserId} />
+        <LoginForm data_Account={data_Account} />
       </div>
     </div>
   );

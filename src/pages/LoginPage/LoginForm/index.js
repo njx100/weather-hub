@@ -5,44 +5,22 @@ import { useNavigate } from "react-router-dom";
 
 const { Title } = Typography;
 
-const LoginForm = ({ data_Account, setUserId }) => {
+const LoginForm = ({ data_Account }) => {
+  sessionStorage.setItem("id", "");
+  sessionStorage.setItem("username", "");
   const navigate = useNavigate();
 
   const onFinish = (values) => {
-    console.log("Received values of form: ", values.username);
-    const isLoginAccount = data_Account.some(
-      (account) => account.nickname === values.username
-    );
-    const isPassWordAccount = data_Account.some(
-      (password) => password.password === values.password
-    );
-    console.log(isLoginAccount);
-    if (isLoginAccount) {
-      if (isPassWordAccount) {
-        alert("Login sucsecss");
-        console.log(values.id);
-        setUserId(values.id);
+    data_Account.forEach((element) => {
+      if (
+        element.username === values.username &&
+        element.password === values.password
+      ) {
+        sessionStorage.setItem("id", element.id);
+        sessionStorage.setItem("username", element.username);
         navigate("/");
-      } else {
-        alert("Khong dung :>");
       }
-    } else {
-      alert("Khong co ten nguoi dung");
-    }
-    if (values.remember) {
-      localStorage.setItem("username", values.username);
-      localStorage.setItem("password", values.password);
-    }
-  };
-
-  const handleForgotPassword = (e) => {
-    e.preventDefault();
-    console.log("Handle password recovery logic here");
-  };
-
-  const handleRegister = (e) => {
-    e.preventDefault();
-    console.log("Handle registration logic here");
+    });
   };
 
   return (

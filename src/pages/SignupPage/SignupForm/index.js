@@ -7,10 +7,10 @@ const { Option } = Select;
 const SignupForm = ({ data_Account, addUserAccount }) => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
-  console.log('a')
+  console.log("a");
   const onFinish = (values) => {
     const isUserExists = data_Account.some(
-      (account) => account.nickname === values.nickname
+      (account) => account.username === values.username
     );
     const isEmailExists = data_Account.some(
       (emails) => emails.email === values.email
@@ -27,14 +27,16 @@ const SignupForm = ({ data_Account, addUserAccount }) => {
         alert(`Email has already`);
       } else {
         if (isPhoneExists) {
-          alert(`Phone has already`); 
+          alert(`Phone has already`);
         } else {
-          const new_Account = Object.assign(values, { id: uuidv4(), favCities: [] });
+          const new_Account = Object.assign(values, {
+            id: uuidv4(),
+            favCities: [],
+          });
           addUserAccount(new_Account);
-          console.log(new_Account)
-          alert("Create Account sucsecss")
-          navigate("/login")
-
+          console.log(new_Account);
+          alert("Create Account sucsecss");
+          navigate("/login");
         }
       }
     }
@@ -54,7 +56,6 @@ const SignupForm = ({ data_Account, addUserAccount }) => {
   );
 
   return (
-    
     <Form
       className="signup"
       form={form}
@@ -69,9 +70,9 @@ const SignupForm = ({ data_Account, addUserAccount }) => {
       <h2>Create An Account</h2>
       <Form.Item
         className="form-style"
-        name="nickname"
-        label="Nickname"
-        tooltip="What do you want others to call you?"
+        name="username"
+        label="Username"
+        tooltip="How would you like others to call you?"
         rules={[
           {
             required: true,
@@ -195,11 +196,10 @@ const SignupForm = ({ data_Account, addUserAccount }) => {
       </Form.Item>
       <Form.Item className="btn-form">
         <Button
-        type="primary"
+          type="primary"
           size="larget"
           htmlType="submit"
-        className="btn-signup"
-
+          className="btn-signup"
         >
           Sign Up
         </Button>

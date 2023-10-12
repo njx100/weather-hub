@@ -3,20 +3,7 @@ import Header from "../../components/Header";
 import CitiesList from "./CitiesList";
 import { DEFAULT_USER } from "../../utilities/user";
 import axios from "axios";
-import {
-  Audio,
-  BallTriangle,
-  Bars,
-  Circles,
-  Grid,
-  Hearts,
-  Oval,
-  Puff,
-  Rings,
-  SpinningCircles,
-  TailSpin,
-  ThreeDots,
-} from "@agney/react-loading";
+import { Puff } from "@agney/react-loading";
 
 // import { v4 as uuidv4 } from "uuid";
 import "./style.css";

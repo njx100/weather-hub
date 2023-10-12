@@ -11,7 +11,6 @@ import PageNotFound from "./pages/PageNotFound";
 function App() {
   const [data_Account, setData_Account] = useState([]);
   const url_link = "https://6518f495818c4e98ac5ffd9f.mockapi.io/signup";
-  const [userID, setUserID] = useState("0");
 
   useEffect(() => {
     const fetchTodo = async () => {
@@ -31,9 +30,7 @@ function App() {
       <Routes>
         <Route
           path="login"
-          element={
-            <LoginPage data_Account={data_Account} setUserID={setUserID} />
-          }
+          element={<LoginPage data_Account={data_Account} />}
         />
         <Route
           path="signup"
