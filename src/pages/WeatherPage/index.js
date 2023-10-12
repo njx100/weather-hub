@@ -11,23 +11,23 @@ import "./style.css";
 const WeatherPage = () => {
   const [userData, setUserData] = useState(DEFAULT_USER);
   const [isLoading, setIsLoading] = useState(true);
-  const userInfoApi = "https://650c557c47af3fd22f677e50.mockapi.io/user_info/";
-  const { userName, favCities, id } = userData;
+  const userInfoApi = "https://6518f495818c4e98ac5ffd9f.mockapi.io/signup";
+  const { username, favCities } = userData;
 
   const getUserData = async (id) => {
     setIsLoading(true);
-    const response = await axios.get(userInfoApi + id);
+    const response = await axios.get(userInfoApi + "/" + id);
     setUserData(response.data);
     setIsLoading(false);
   };
 
   useEffect(() => {
-    getUserData(id);
+    getUserData(sessionStorage.getItem("id"));
   }, []);
 
   return (
     <div className="weather-page">
-      <Header userName={userName} />
+      <Header username={username} />
       <div className="container">
         {!isLoading ? (
           <CitiesList favCities={favCities} />
