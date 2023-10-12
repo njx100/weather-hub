@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./style.css";
 
-const Header = ({ userName }) => {
+const Header = ({ username }) => {
   return (
     <div className="header">
       <div className="logo"></div>
@@ -10,7 +10,7 @@ const Header = ({ userName }) => {
         <Link to="/news">News</Link>
       </div>
       <div className="login">
-        <Link to="/login">{userName}</Link>
+        <Link to="/login">{username}</Link>
       </div>
     </div>
   );

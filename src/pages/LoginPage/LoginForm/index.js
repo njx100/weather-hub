@@ -24,14 +24,6 @@ const LoginForm = ({ data_Account }) => {
   };
 
   return (
-    // <div className=""
-    //   style={{
-    //     display: "flex",
-    //     justifyContent: "center",
-    //     alignItems: "center",
-    //     height: "100vh",
-    //   }}
-    // >
     <Card style={{ width: 500 }}>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Title level={2}>Company Logo </Title>
@@ -60,14 +52,6 @@ const LoginForm = ({ data_Account }) => {
             prefix={<LockOutlined className="site-form-item-icon" />}
             placeholder="Password"
           />
-          {/* <a
-              style={{ float: "right" }}
-              className="login-form-forgot"
-              href=""
-              onClick={handleForgotPassword}
-            >
-              Forgot password
-            </a> */}
         </Form.Item>
         <Form.Item>
           <Form.Item name="remember" valuePropName="checked" noStyle>
@@ -78,7 +62,6 @@ const LoginForm = ({ data_Account }) => {
           <Button
             type="primary"
             htmlType="submit"
-            // onClick={handleLoginSucsecss}
             className="login-form-button"
             block
           >
@@ -97,7 +80,6 @@ const LoginForm = ({ data_Account }) => {
         </Form.Item>
       </Form>
     </Card>
-    // </div>
   );
 };
 

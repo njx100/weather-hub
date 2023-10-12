@@ -13,7 +13,6 @@ const SearchPopup = ({ setIsPopupOpen, addCity }) => {
   const [cities, setCities] = useState([]);
   const [unableToFind, setUnableToFind] = useState();
   const [count, setCount] = useState(0);
-
   const CITY_API = "https://api.api-ninjas.com/v1/geocoding?city=";
   const APIKEY = "Lx/04NVq3uaisIHXy5WPcQ==bjnoRIGlsFFXZUfj";
 
@@ -32,7 +31,6 @@ const SearchPopup = ({ setIsPopupOpen, addCity }) => {
   };
 
   const handleSelectCity = (city) => {
-    console.log(city);
     setIsPopupOpen(false);
     addCity(city);
   };
