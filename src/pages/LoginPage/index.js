@@ -1,6 +1,6 @@
 import LoginForm from "./LoginForm";
 import "./style.css";
-const LoginPage = ({ data_Account }) => {
+const LoginPage = ({ data_Account, setUserId }) => {
   return (
     <div className="outer">
       <div className="middle section">

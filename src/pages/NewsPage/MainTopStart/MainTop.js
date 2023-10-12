@@ -2,9 +2,7 @@ import React from "react";
 import "./style.css";
 function MainTop({ data }) {
 
-  const urlImg = data.multimedia[Object.keys(data.multimedia)[0]].url;
-
-  console.log(urlImg);
+  const urlImg = data.urlToImage;
 
   return (
     <section class="pt-4 pb-0 card-grid">
@@ -32,11 +30,11 @@ function MainTop({ data }) {
                       {data.title}.
                     </a>
                   </h2>
-                  <p class="text-white">{data.abstract.slice(0, 150)}</p>
+                  <p class="text-white">{data.description.slice(0, 150)}</p>
                   {/* <!-- Card info --> */}
                   <ul class="nav nav-divider text-white-force align-items-center d-none d-sm-inline-block">
                     <li class="nav-item position-relative">
-                      <div class="nav-link">{data.byline}</div>
+                      <div class="nav-link">{data.author}</div>
                     </li>
                   </ul>
                 </div>
@@ -71,7 +69,7 @@ function MainTop({ data }) {
                       {/* <!-- Card info --> */}
                       <ul class="nav nav-divider text-white-force align-items-center d-none d-sm-inline-block">
                         <li class="nav-item position-relative">
-                          <div class="nav-link">{data.byline}</div>
+                          <div class="nav-link">{data.author}</div>
                         </li>
                       </ul>
                     </div>
@@ -103,7 +101,7 @@ function MainTop({ data }) {
                       {/* <!-- Card info --> */}
                       <ul class="nav nav-divider text-white-force align-items-center d-none d-sm-inline-block">
                         <li class="nav-item position-relative">
-                          <div class="nav-link">{data.byline}</div>
+                          <div class="nav-link">{data.author}</div>
                         </li>
                       </ul>
                     </div>
@@ -135,7 +133,7 @@ function MainTop({ data }) {
                       {/* <!-- Card info --> */}
                       <ul class="nav nav-divider text-white-force align-items-center d-none d-sm-inline-block">
                         <li class="nav-item position-relative">
-                          <div class="nav-link">{data.byline}</div>
+                          <div class="nav-link">{data.author}</div>
                         </li>
                       </ul>
                     </div>
