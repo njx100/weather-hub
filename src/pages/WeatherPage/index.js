@@ -21,6 +21,10 @@ const WeatherPage = () => {
     setIsLoading(false);
   };
 
+  const updateCitiesList = async (id, cities) => {
+    axios.put(userInfoApi + "/" + id, cities);
+  };
+
   useEffect(() => {
     getUserData(sessionStorage.getItem("id") || "1");
   }, []);
@@ -30,7 +34,10 @@ const WeatherPage = () => {
       <Header username={username} />
       <div className="container">
         {!isLoading ? (
-          <CitiesList favCities={favCities} />
+          <CitiesList
+            favCities={favCities}
+            updateCitiesList={updateCitiesList}
+          />
         ) : (
           <div className="loading-container">
             <Puff className="loading-icon" />
