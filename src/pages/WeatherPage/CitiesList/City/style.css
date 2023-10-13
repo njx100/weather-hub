@@ -15,39 +15,46 @@
   align-items: center;
 }
 
-.city-card-sunny {
+.sunny {
   background: url("../../../../utilities/images/sunny.svg");
   background-size: cover;
   background-position: center;
 }
 
-.city-card-night {
+.night {
   background: url("../../../../utilities/images/night.svg");
   background-size: cover;
   background-position: center;
 }
 
-.city-card-partly-cloudy {
+.partly-cloudy {
   background: url("../../../../utilities/images/partly_cloudy.svg");
   background-size: cover;
   background-position: center;
 }
 
-.city-card-thunder-storm {
+.thunder-storm {
   background: url("../../../../utilities/images/thunder_storm.svg");
   background-size: cover;
   background-position: center;
 }
 
-.city-card-snow {
+.snow {
   background: url("../../../../utilities/images/snow.svg");
   background-size: cover;
   background-position: center;
 }
-.city-card-rain {
+.rain {
   background: url("../../../../utilities/images/rain.svg");
   background-size: cover;
   background-position: center;
+}
+
+.default {
+  background-color: rgba(255, 255, 255, 0.3);
+  background-size: cover;
+  background-position: center;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .city-temp {
