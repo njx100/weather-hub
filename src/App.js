@@ -23,7 +23,7 @@ function App() {
 
   const addUserAccount = (account) => {
     setData_Account((pre) => [...pre, account]);
-    axios.post(url_link, account).then((res) => console.log(res));
+    axios.post(url_link, account);
   };
 
   return (

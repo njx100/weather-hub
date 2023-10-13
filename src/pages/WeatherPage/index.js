@@ -15,7 +15,6 @@ const WeatherPage = () => {
   const { username, favCities } = userData;
 
   const getUserData = async (id) => {
-    console.log(userInfoApi + "/" + id);
     setIsLoading(true);
     const response = await axios.get(userInfoApi + "/" + id);
     setUserData(response.data);
