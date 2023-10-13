@@ -5,7 +5,7 @@ import { DEFAULT_USER } from "../../utilities/user";
 import axios from "axios";
 import { Puff } from "@agney/react-loading";
 
-// import { v4 as uuidv4 } from "uuid";
+// import { v4 as uuidv4v4 } from "uuidv4";
 import "./style.css";
 
 const WeatherPage = () => {
@@ -14,15 +14,16 @@ const WeatherPage = () => {
   const userInfoApi = "https://6518f495818c4e98ac5ffd9f.mockapi.io/signup";
   const { username, favCities } = userData;
 
-  const getUserData = async (id) => {
+  const getUserData = async (idv4) => {
     setIsLoading(true);
-    const response = await axios.get(userInfoApi + "/" + id);
+    const response = await axios.get(userInfoApi + "/" + idv4);
+    console.log(response.data.idv4)
     setUserData(response.data);
     setIsLoading(false);
-  };
+  }
 
   useEffect(() => {
-    getUserData(sessionStorage.getItem("id"));
+    getUserData(sessionStorage.getItem("idv4"));
   }, []);
 
   return (

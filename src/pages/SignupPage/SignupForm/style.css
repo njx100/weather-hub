@@ -29,3 +29,8 @@ h2 {
     font-weight: bold;
 
 }
+
+.swal-footer {
+  display: flex;
+  justify-content: center;
+}
