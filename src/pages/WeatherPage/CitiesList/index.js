@@ -6,13 +6,14 @@ import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import "./style.css";
 
-const CitiesList = ({ favCities }) => {
+const CitiesList = ({ favCities, updateCitiesList }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [cities, setCities] = useState(favCities);
 
   const addCity = (city) => {
     const newCities = [...cities, city];
     setCities(newCities);
+    updateCitiesList(sessionStorage.getItem("id"), { favCities: newCities });
   };
 
   return (
