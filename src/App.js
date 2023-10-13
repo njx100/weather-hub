@@ -12,12 +12,13 @@ function App() {
   const [data_Account, setData_Account] = useState([]);
   const url_link = "https://6518f495818c4e98ac5ffd9f.mockapi.io/signup";
 
+  const fetchUsersData = async () => {
+    const response = await axios.get(url_link);
+    setData_Account(response.data);
+  };
+
   useEffect(() => {
-    const fetchTodo = async () => {
-      const response = await axios.get(url_link);
-      setData_Account(response.data);
-    };
-    fetchTodo();
+    fetchUsersData();
   }, []);
 
   const addUserAccount = (account) => {
@@ -30,7 +31,12 @@ function App() {
       <Routes>
         <Route
           path="login"
-          element={<LoginPage data_Account={data_Account} />}
+          element={
+            <LoginPage
+              data_Account={data_Account}
+              fetchUsersData={fetchUsersData}
+            />
+          }
         />
         <Route
           path="signup"
