@@ -110,3 +110,20 @@
 .loading {
   width: 8rem;
 }
+
+.delete-btn {
+  all: unset;
+  position: absolute;
+  top: 22px;
+  right: 25px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all ease-in-out 200ms;
+}
+
+.delete-btn:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.delete-btn:active {
+  color: rgba(255, 255, 255, 0.1);
+}

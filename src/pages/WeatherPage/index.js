@@ -4,7 +4,6 @@ import CitiesList from "./CitiesList";
 import { DEFAULT_USER } from "../../utilities/user";
 import axios from "axios";
 import { Puff } from "@agney/react-loading";
-
 // import { v4 as uuidv4 } from "uuid";
 import "./style.css";
 

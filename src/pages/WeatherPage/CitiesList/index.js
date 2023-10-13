@@ -16,19 +16,27 @@ const CitiesList = ({ favCities, updateCitiesList }) => {
     updateCitiesList(sessionStorage.getItem("id"), { favCities: newCities });
   };
 
+  const deleteCity = (lat, long) => {
+    const newList = cities.filter((city) => {
+      if (city.latitude !== lat && city.longitude !== long) {
+        return city;
+      }
+    });
+    updateCitiesList(sessionStorage.getItem("id"), { favCities: newList });
+  };
+
   return (
     <div className="cities-list">
-      {cities.map(({ name, latitude, longitude }) => {
+      {cities.map(({ latitude, longitude }) => {
         return (
           <City
             key={uuidv4()}
-            name={name}
             latitude={latitude}
             longitude={longitude}
+            deleteCity={deleteCity}
           />
         );
       })}
-
       <AddCity setIsPopupOpen={setIsPopupOpen} isPopupOpen={isPopupOpen} />
       {isPopupOpen ? (
         <SearchPopup setIsPopupOpen={setIsPopupOpen} addCity={addCity} />
