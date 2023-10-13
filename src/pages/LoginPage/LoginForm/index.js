@@ -16,6 +16,7 @@ const LoginForm = ({ data_Account }) => {
         element.username === values.username &&
         element.password === values.password
       ) {
+        console.log(element.id, " ", element.username);
         sessionStorage.setItem("id", element.id);
         sessionStorage.setItem("username", element.username);
         navigate("/");
