@@ -73,6 +73,11 @@
   font-weight: 500;
 }
 
+.night .city-last-updated {
+  font-size: 1rem;
+  color: rgb(22, 22, 22);
+}
+
 .city-last-updated {
   font-size: 1rem;
   color: rgb(98, 98, 98);
@@ -83,9 +88,6 @@
   margin-top: 2.5rem;
 }
 
-/* .conditon-text {
-
-} */
 .weather-condition {
   margin-top: 8rem;
 }
@@ -96,4 +98,15 @@
 
 .weather-forecast {
   margin-bottom: 1.5rem;
+}
+
+.loading-container {
+  size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  width: 8rem;
 }

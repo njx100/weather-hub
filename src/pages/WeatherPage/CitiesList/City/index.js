@@ -2,6 +2,7 @@ import WeatherForecast from "./WeatherForecast";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import dayjs from "dayjs";
+import { BallTriangle } from "@agney/react-loading";
 import "./style.css";
 
 const City = ({ name, latitude, longitude }) => {
@@ -60,7 +61,11 @@ const City = ({ name, latitude, longitude }) => {
           </div>
           <WeatherForecast name={name} forecast={forecast} />
         </>
-      ) : null}
+      ) : (
+        <div className="loading-container">
+          <BallTriangle className="loading" />
+        </div>
+      )}
     </div>
   );
 };
