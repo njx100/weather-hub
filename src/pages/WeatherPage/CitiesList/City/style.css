@@ -7,12 +7,23 @@
   margin: 1rem;
   color: white;
   font-size: 2rem;
-  opacity: 0.85;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.city-card:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  transition: all ease-in-out 450ms;
+}
+
+.city-name {
+  font-weight: 700;
 }
 
 .sunny {
@@ -57,9 +68,30 @@
   color: rgba(0, 0, 0, 0.8);
 }
 
+.city-date {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.city-last-updated {
+  font-size: 1rem;
+  color: rgb(98, 98, 98);
+}
+
 .city-temp {
   font-size: 7rem;
-  margin-top: 5rem;
+  margin-top: 2.5rem;
+}
+
+/* .conditon-text {
+
+} */
+.weather-condition {
+  margin-top: 8rem;
+}
+
+.wind {
+  font-size: 1.3rem;
 }
 
 .weather-forecast {

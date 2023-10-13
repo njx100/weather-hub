@@ -1,6 +1,7 @@
 import WeatherForecast from "./WeatherForecast";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import dayjs from "dayjs";
 import "./style.css";
 
 const City = ({ name, latitude, longitude }) => {
@@ -45,7 +46,17 @@ const City = ({ name, latitude, longitude }) => {
         <>
           <div className="city-info">
             <div className="city-name">{name}</div>
+            <div className="city-date">
+              {dayjs(current.last_updated).format("ddd DD-MM-YY")}
+            </div>
+            <div className="city-last-updated">
+              last updated: {dayjs(current.last_updated).format("hh:mm")}
+            </div>
             <div className="city-temp">{Math.round(current.temp_c)}&deg;</div>
+          </div>
+          <div className="weather-condition">
+            <div className="condition-text">{current.condition.text}</div>
+            <div className="wind">Wind: {current.wind_kph} km/h</div>
           </div>
           <WeatherForecast name={name} forecast={forecast} />
         </>
