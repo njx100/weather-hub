@@ -10,11 +10,11 @@ const City = ({ name, latitude, longitude }) => {
   });
   const [isLoading, setIsLoading] = useState(true);
   const { current, forecast } = weather;
-
+  const [weatherStatus, setWeatherStatus] = useState("sunny");
   const weatherAPI = "https://api.weatherapi.com/v1/forecast.json?key=";
   const KEY = "60b46f95aa494b69bbc15546230710";
   const apiEndPoint = "&days=6&aqi=no&alerts=no";
-  const cardClassName = `city-card city-card-rain`;
+  const cardClassName = `city-card city-card-${weatherStatus}`;
 
   const getWeather = async () => {
     setIsLoading(true);
