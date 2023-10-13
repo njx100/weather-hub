@@ -1,13 +1,14 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { Button, Checkbox, Form, Input, Select } from "antd";
 import "./style.css";
 import { v4 as uuidv4 } from "uuid";
 const { Option } = Select;
 
 const SignupForm = ({ data_Account, addUserAccount }) => {
+  const [isAccepted, setIsAccepted] = useState(false);
   const [form] = Form.useForm();
   const navigate = useNavigate();
-  console.log("a");
   const onFinish = (values) => {
     const isUserExists = data_Account.some(
       (account) => account.username === values.username
@@ -18,8 +19,6 @@ const SignupForm = ({ data_Account, addUserAccount }) => {
     const isPhoneExists = data_Account.some(
       (phones) => phones.phone === values.phone
     );
-    // console.log(isUserExists);
-
     if (isUserExists) {
       alert(`Name has already`);
     } else {
@@ -34,7 +33,6 @@ const SignupForm = ({ data_Account, addUserAccount }) => {
             favCities: [],
           });
           addUserAccount(new_Account);
-          console.log(new_Account);
           alert("Create Account sucsecss");
           navigate("/login");
         }
@@ -186,12 +184,12 @@ const SignupForm = ({ data_Account, addUserAccount }) => {
             validator: (_, value) =>
               value
                 ? Promise.resolve()
-                : Promise.reject(new Error("Should accept agreement")),
+                : Promise.reject(new Error("Please accept the aggrement!")),
           },
         ]}
       >
-        <Checkbox>
-          I have read the <a href="">agreement</a>
+        <Checkbox onChange={() => setIsAccepted((prev) => !prev)}>
+          I have read the <a href="/#">agreement</a>
         </Checkbox>
       </Form.Item>
       <Form.Item className="btn-form">
@@ -200,6 +198,7 @@ const SignupForm = ({ data_Account, addUserAccount }) => {
           size="larget"
           htmlType="submit"
           className="btn-signup"
+          disabled={!isAccepted}
         >
           Sign Up
         </Button>
