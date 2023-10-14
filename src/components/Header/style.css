@@ -18,7 +18,6 @@
 
 .dashboard-container {
   position: fixed;
-  /* background-color: rgb(197, 197, 197); */
   color: black;
   height: 100vh;
   z-index: 100;
@@ -32,7 +31,6 @@
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -58,31 +56,21 @@
 }
 
 .dashboard a:hover {
-  /* transform: scale(1.1); */
   font-size: 6rem;
 }
 
-/* .close-btn {
+.header-close-btn {
+  all: unset;
   position: absolute;
-  right: 500px;
-} */
-
-.close-icon {
-  position: absolute;
-  left: 16rem;
+  font-size: 3rem;
+  right: 3rem;
   top: 2rem;
 }
 
-.close-icon:hover {
-  color: orange;
+.header-close-icon {
+  font-size: 3rem;
 }
 
-/* @keyframes slide-in {
-  100% {
-    width: 0;
-  }
-
-  0% {
-    width: 500px;
-  }
-} */
+.header-close-icon:hover {
+  color: orange;
+}
