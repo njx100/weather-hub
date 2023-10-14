@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { Input, Button } from "antd";
 import { AiOutlineClose } from "react-icons/ai";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 const { Search } = Input;
 
 const SearchPopup = ({ setIsPopupOpen, addCity }) => {
@@ -77,7 +78,11 @@ const SearchPopup = ({ setIsPopupOpen, addCity }) => {
           <div className="warning">Your city does not exist!</div>
         )}
         {cities.map((city) => (
-          <div className="search-result" onClick={() => handleSelectCity(city)}>
+          <div
+            key={uuidv4()}
+            className="search-result"
+            onClick={() => handleSelectCity(city)}
+          >
             <div>{city.name}</div>
             <div>{city.state ? `, ${city.state}` : null}</div>
             <div>{`, ${city.country}`}</div>

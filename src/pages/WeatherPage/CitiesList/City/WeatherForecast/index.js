@@ -13,9 +13,7 @@ const WeatherForecast = ({ name, forecast }) => {
     "https://raw.githubusercontent.com/Makin-Things/weather-icons/master/animated/snowy-3.svg";
   const thunderStormIcon =
     "https://raw.githubusercontent.com/Makin-Things/weather-icons/master/animated/thunderstorms.svg";
-
   const { forecastday } = forecast;
-  // console.log(forecastday[0].day.condition);
 
   return (
     <div className="weather-forecast-container">

@@ -7,54 +7,137 @@
   margin: 1rem;
   color: white;
   font-size: 2rem;
-  opacity: 0.85;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  transition: all ease-in-out 350ms;
 }
 
-.city-card-sunny {
+.city-card:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  animation: border-hovering 2s infinite;
+}
+
+.city-name {
+  font-weight: 700;
+}
+
+.sunny {
   background: url("../../../../utilities/images/sunny.svg");
   background-size: cover;
   background-position: center;
 }
 
-.city-card-night {
+.night {
   background: url("../../../../utilities/images/night.svg");
   background-size: cover;
   background-position: center;
 }
 
-.city-card-partly-cloudy {
+.partly-cloudy {
   background: url("../../../../utilities/images/partly_cloudy.svg");
   background-size: cover;
   background-position: center;
 }
 
-.city-card-thunder-storm {
+.thunder-storm {
   background: url("../../../../utilities/images/thunder_storm.svg");
   background-size: cover;
   background-position: center;
 }
 
-.city-card-snow {
+.snow {
   background: url("../../../../utilities/images/snow.svg");
   background-size: cover;
   background-position: center;
 }
-.city-card-rain {
+.rain {
   background: url("../../../../utilities/images/rain.svg");
   background-size: cover;
   background-position: center;
 }
 
+.default {
+  background-color: rgba(255, 255, 255, 0.3);
+  background-size: cover;
+  background-position: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.city-date {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.night .city-last-updated {
+  font-size: 1rem;
+  color: rgb(22, 22, 22);
+}
+
+.city-last-updated {
+  font-size: 1rem;
+  color: rgb(98, 98, 98);
+}
+
 .city-temp {
   font-size: 7rem;
-  margin-top: 5rem;
+  margin-top: 2.5rem;
+}
+
+.weather-condition {
+  margin-top: 8rem;
+}
+
+.wind {
+  font-size: 1.3rem;
 }
 
 .weather-forecast {
   margin-bottom: 1.5rem;
+}
+
+.loading-container {
+  size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  width: 8rem;
+}
+
+.delete-btn {
+  all: unset;
+  position: absolute;
+  top: 22px;
+  right: 25px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all ease-in-out 200ms;
+}
+
+.delete-btn:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.delete-btn:active {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes border-hovering {
+  0% {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  }
 }

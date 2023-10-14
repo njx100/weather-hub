@@ -9,13 +9,14 @@ import MainTop from "./MainTopStart/MainTop";
 
 const NewsPage = () => {
   const key = "gtIzOCHkHAa2NhIBjC7Zm0tMZz6AFHAy";
-  const url_link = `https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=${key}`;
+  const urlCard = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${key}`;
+
   const [dataNews, setdataNews] = useState([]);
 
   const [visibleItems, setVisibleItems] = useState(4);
   useEffect(() => {
     const fetchDataNews = async () => {
-      const response = await axios.get(url_link);
+      const response = await axios.get(urlCard);
       setdataNews(response.data.results);
     };
     fetchDataNews();
@@ -36,7 +37,7 @@ const NewsPage = () => {
         <div className="container text-center">
           <div className="row">
             {/* StoryForYouLeft */}
-            <div className="col-lg-9">
+            <div className="col-lg-9 margin-top-4em ">
               <div class="mb-4">
                 <h2 class="m-0 center-h2">
                   <Icon.Book color="white" />

@@ -4,8 +4,7 @@ import CitiesList from "./CitiesList";
 import { DEFAULT_USER } from "../../utilities/user";
 import axios from "axios";
 import { Puff } from "@agney/react-loading";
-
-// import { v4 as uuidv4v4 } from "uuidv4";
+// import { v4 as uuidv4 } from "uuid";
 import "./style.css";
 
 const WeatherPage = () => {
@@ -22,8 +21,12 @@ const WeatherPage = () => {
     setIsLoading(false);
   }
 
+  const updateCitiesList = async (id, cities) => {
+    axios.put(userInfoApi + "/" + id, cities);
+  };
+
   useEffect(() => {
-    getUserData(sessionStorage.getItem("idv4"));
+    getUserData(sessionStorage.getItem("id") || "1");
   }, []);
 
   return (
@@ -31,7 +34,10 @@ const WeatherPage = () => {
       <Header username={username} />
       <div className="container">
         {!isLoading ? (
-          <CitiesList favCities={favCities} />
+          <CitiesList
+            favCities={favCities}
+            updateCitiesList={updateCitiesList}
+          />
         ) : (
           <div className="loading-container">
             <Puff className="loading-icon" />

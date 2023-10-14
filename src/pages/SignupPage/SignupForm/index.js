@@ -1,11 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import { Button, Checkbox, Form, Input, Select } from "antd";
+import { useState } from "react";
+import { Button, Checkbox, Form, Input, Select, Space } from "antd";
 import "./style.css";
 import { v4 as uuidv4 } from "uuid";
 import swal from "sweetalert";
+import * as Icon from "react-feather";
 const { Option } = Select;
 
-const SignupForm = ({ data_Account, addUserAccount }) => {
+const SignupForm = ({ dataAccount, addUserAccount }) => {
+  const [isAccepted, setIsAccepted] = useState(false);
   const [form] = Form.useForm();
   const navigate = useNavigate();
   const onFinish = (values) => {
@@ -22,219 +25,197 @@ const SignupForm = ({ data_Account, addUserAccount }) => {
     );
     navigate("/login");
   };
-  const prefixSelector = (
-    <Form.Item name="prefix" noStyle>
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="86">+86</Option>
-        <Option value="87">+87</Option>
-      </Select>
-    </Form.Item>
-  );
-
   return (
-    <Form
-      className="signup"
-      form={form}
-      name="register"
-      onFinish={onFinish}
-      initialValues={{
-        prefix: "86",
-      }}
-      layout="vertical"
-      scrollToFirstError
-    >
-      <h2>Create An Account</h2>
-      <Form.Item
-        className="form-style"
-        name="username"
-        label="Username"
-        tooltip="How would you like others to call you?"
-        hasFeedback
-        rules={[
-          {
-            required: true,
-            message: "Please input your username!",
-          },
-          () => ({
-            validator(_, value) {
-              const checkUserName = data_Account.some(
-                (account) => account.username === value
-              );
-              if (!checkUserName) {
-                return Promise.resolve();
-              }
-              return Promise.reject(
-                new Error(`"${value}" has already been taken!`)
-              );
-            },
-          }),
-        ]}
+    <div className="card-login-form">
+      <Button 
+        onClick={() => {
+          navigate("/login");
+        }}
+        className="return-login"
       >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        className="form-style"
-        name="email"
-        label="E-mail"
-        rules={[
-          {
-            type: "email",
-            message: "The input is not valid E-mail!",
-          },
-          {
-            required: true,
-            message: "Please input your E-mail!",
-          },
-          () => ({
-            validator(_, value) {
-              const checkUserName = data_Account.some(
-                (account) => account.email === value
-              );
-              if (!checkUserName) {
-                return Promise.resolve();
-              }
-              return Promise.reject(new Error(`Email has already been taken!`));
-            },
-          }),
-        ]}
+        <Icon.ArrowLeft size={15} color="#1E2F97" />
+        Login Page
+      </Button>
+      <div className="logo-signup text-align-center">
+        <Icon.Sunrise />
+      </div>
+      <Form
+        className="signup"
+        form={form}
+        name="register"
+        onFinish={onFinish}
+        layout="vertical"
+        scrollToFirstError
       >
-        <Input />
-      </Form.Item>
+        <h3 className="title-login-form pd-title">Create your Account</h3>
 
-      <Form.Item
-        className="form-style"
-        name="password"
-        label="Password"
-        rules={[
-          {
-            required: true,
-            message: "Please input your password!",
-          },
-        ]}
-        hasFeedback
-      >
-        <Input.Password />
-      </Form.Item>
+        <Form.Item
+          className="form-style"
+          name="username"
+          hasFeedback
+          rules={[
+            {
+              required: true,
+              message: "Please input your username!",
+            },
+            () => ({
+              validator(_, value) {
+                const checkUserName = dataAccount.some(
+                  (account) => account.username === value
+                );
+                if (!checkUserName) {
+                  return Promise.resolve();
+                }
+                return Promise.reject(
+                  new Error(`"${value}" has already been taken!`)
+                );
+              },
+            }),
+          ]}
+        >
+          <Input placeholder="User Name" className="pd-form-signup" />
+        </Form.Item>
+        <Form.Item
+          className="form-style"
+          name="email"
+          rules={[
+            {
+              type: "email",
+              message: "The input is not valid E-mail!",
+            },
+            {
+              required: true,
+              message: "Please input your E-mail!",
+            },
+            () => ({
+              validator(_, value) {
+                const checkUserName = dataAccount.some(
+                  (account) => account.email === value
+                );
+                if (!checkUserName) {
+                  return Promise.resolve();
+                }
+                return Promise.reject(
+                  new Error(`Email has already been taken!`)
+                );
+              },
+            }),
+          ]}
+        >
+          <Input placeholder="Email" className="pd-form-signup" />
+        </Form.Item>
 
-      <Form.Item
-        className="form-style"
-        name="confirm"
-        label="Confirm Password"
-        dependencies={["password"]}
-        hasFeedback
-        rules={[
-          {
-            required: true,
-            message: "Please confirm your password!",
-          },
-          ({ getFieldValue }) => ({
-            validator(_, value) {
-              if (!value || getFieldValue("password") === value) {
-                return Promise.resolve();
-              }
-              return Promise.reject(
-                new Error("The new password that you entered do not match!")
-              );
+        <Form.Item
+          className="form-style"
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: "Please input your password!",
             },
-          }),
-        ]}
-      >
-        <Input.Password />
-      </Form.Item>
+          ]}
+          hasFeedback
+        >
+          <Input.Password placeholder="Password" className="pd-form-signup" />
+        </Form.Item>
 
-      <Form.Item
-        className="form-style"
-        name="phone"
-        label="Phone Number"
-        rules={[
-          () => ({
-            validator(_, value) {
-              const checkUserName = data_Account.some(
-                (account) => account.phone === value
-              );
-              if (!checkUserName) {
-                return Promise.resolve();
-              }
-              return Promise.reject(new Error(`Phone number already in use!`));
+        <Form.Item
+          className="form-style"
+          name="confirm"
+          dependencies={["password"]}
+          hasFeedback
+          rules={[
+            {
+              required: true,
+              message: "Please confirm your password!",
             },
-            
-          }),
-          () => ({
-            validator(_, value) {
-              // console.log((Number(value)))
-              if (Number(value)) {
-                return Promise.resolve();
-              }
-              return Promise.reject(new Error("Please input your phone number!"));
+            ({ getFieldValue }) => ({
+              validator(_, value) {
+                if (!value || getFieldValue("password") === value) {
+                  return Promise.resolve();
+                }
+                return Promise.reject(
+                  new Error("The new password that you entered do not match!")
+                );
+              },
+            }),
+          ]}
+        >
+          <Input.Password
+            placeholder="Confirm Password"
+            className="pd-form-signup"
+          />
+        </Form.Item>
+
+        <Form.Item
+          name="agreement"
+          valuePropName="checked"
+          rules={[
+            {
+              validator: (_, value) =>
+                value
+                  ? Promise.resolve()
+                  : Promise.reject(new Error("Please accept the aggrement!")),
             },
-            
-          }),
-        ]}
-      >
-        <Input
-          addonBefore={prefixSelector}
+          ]}
+        >
+          <Checkbox onChange={() => setIsAccepted((prev) => !prev)}>
+            I have read the{" "}
+            <a className="rules-agreement" href="/#">
+              agreement
+            </a>
+          </Checkbox>
+        </Form.Item>
+
+        <Space
+          direction="vertical"
           style={{
             width: "100%",
-          }}
-        />
-      </Form.Item>
-      <Form.Item
-        className="form-style"
-        name="gender"
-        label="Gender"
-        rules={[
-          {
-            required: true,
-            message: "Please select gender!",
-          },
-        ]}
-      >
-        <Select placeholder="select your gender">
-          <Option value="male">Male</Option>
-          <Option value="female">Female</Option>
-          <Option value="other">Other</Option>
-        </Select>
-      </Form.Item>
-
-      <Form.Item
-        name="agreement"
-        valuePropName="checked"
-        rules={[
-          {
-            validator: (_, value) =>
-              value
-                ? Promise.resolve()
-                : Promise.reject(new Error("Should accept agreement")),
-          },
-        ]}
-      >
-        <Checkbox>
-          I have read the <a href="">agreement</a>
-        </Checkbox>
-      </Form.Item>
-      <Form.Item className="btn-form">
-        <Button
-          type="primary"
-          size="larget"
-          htmlType="submit"
-          className="btn-signup"
-        >
-          Sign Up
-        </Button>
-        <Button
-          size="larget"
-          onClick={() => {
-            navigate("/login");
+            padding: "0 2em",
           }}
         >
-          Login
-        </Button>
-      </Form.Item>
-    </Form>
+          <Button
+            htmlType="submit"
+            className="btn-signup"
+            disabled={!isAccepted}
+            type="primary"
+            block
+            style={{ background: "#1E2F97", color: "whitesmoke" }}
+          >
+            Sign up
+          </Button>
+        </Space>
+      </Form>
+      <div className="pd-form pd-login-icon">
+        <p className="text-align-center">- Or sign up with -</p>
+        <div className="row g-2">
+          <div className="col-4">
+            <a
+              href="#"
+              class="bg-facebook-login rounded text-center text-white-force p-3 d-block"
+            >
+              <Icon.Facebook color="#5D82D1" />
+            </a>
+          </div>
+          <div className="col-4">
+            <a
+              href="#"
+              class="bg-github rounded text-center text-white-force p-3 d-block"
+            >
+              <Icon.GitHub color="black" />
+            </a>
+          </div>
+          <div className="col-4">
+            <a
+              href="#"
+              class="bg-twitter rounded text-center text-white-force p-3 d-block"
+            >
+              <Icon.Twitter color="rgb(37,160,237)" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 export default SignupForm;

@@ -20,7 +20,7 @@ function StoryForYou({ data }) {
         />
         <div className="card-body pt-3 px-0">
           <h5 className="card-title">
-            <a className="btn-link" href={data.url}>
+            <a className="btn-link btn-link-handle" href={data.url}>
               {data.title}
             </a>
           </h5>

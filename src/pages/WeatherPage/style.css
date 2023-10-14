@@ -6,6 +6,7 @@
   -o-background-size: cover;
   background-size: cover;
   min-height: 100vh;
+  animation: fade-in 2s ease-in;
 }
 
 .loading-container {
@@ -19,4 +20,13 @@
 .loading-icon {
   width: 10rem;
   color: orange;
+}
+
+@keyframes fade-in {
+  0% {
+    filter: opacity(0);
+  }
+  100% {
+    filter: opacity(1);
+  }
 }

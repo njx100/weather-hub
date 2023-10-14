@@ -1,36 +1,29 @@
-.signup-form {
-  background: rgba(116, 167, 199, 0.46);
 
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.4px);
-  -webkit-backdrop-filter: blur(7.4px);
-}
 
-.middle {
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  align-items: center;
-}
-
-.signup {
-  max-width: 600px;
-  border: 1px solid white;
-  padding: 2em;
-  border-radius: 1em;
-  background-color: white;
-}
-
-h2 {
-    text-align: center;
+.return-login {
+  position: absolute;
+  top: 1em;
+  left: 1em;
 }
 
 .btn-form Button {
-    font-weight: bold;
-
+    font-weight: bold
 }
 
 .swal-footer {
   display: flex;
   justify-content: center;
+}
+
+.rules-agreement {
+  color: #1E2F97;
+}
+
+.pd-form-signup {
+  padding: 0.5em;
+}
+@media only screen and (max-width: 600px) {
+  .card-login-form {
+      width: 100%;
+  }
 }
