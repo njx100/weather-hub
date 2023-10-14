@@ -1,19 +1,31 @@
 import { Link } from "react-router-dom";
-import SettingDropDown from "./SettingDropdown";
+import { useState } from "react";
+
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+
 import "./style.css";
 
-const Header = ({ username }) => {
+const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const dashboardClassname = `${showMenu ? "dashboard-showed" : null}`;
+
   return (
     <div className="header">
-      {/* <div className="logo"></div>
-      <div className="nav-link">
-        <Link to="/">Weather</Link>
-        <Link to="/news">News</Link>
-      </div> */}
-      {/* <div className="login">
-        <Link to="/login">{username}</Link>
-      </div> */}
-      {/* <SettingDropDown /> */}
+      {showMenu ? null : (
+        <button className="menu-btn" onClick={() => setShowMenu(true)}>
+          <AiOutlineMenu className="menu-icon" />
+        </button>
+      )}
+      <div className={`dashboard-container ${dashboardClassname}`}>
+        <div className="dashboard">
+          <button className="close-btn" onClick={() => setShowMenu(false)}>
+            <AiOutlineClose className="close-icon" />
+          </button>
+          <Link to={"/"}>Weather</Link>
+          <Link to={"/news"}>News</Link>
+          <Link to={"/login"}>Logout</Link>
+        </div>
+      </div>
     </div>
   );
 };

@@ -30,7 +30,7 @@ const WeatherPage = () => {
 
   return (
     <div className="weather-page">
-      <Header username={username} />
+      <Header />
       <div className="container">
         {!isLoading ? (
           <CitiesList
