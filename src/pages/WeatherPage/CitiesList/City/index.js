@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 import { BallTriangle } from "@agney/react-loading";
 import { AiOutlineClose } from "react-icons/ai";
 import "./style.css";
+import "animate.css";
 
 const City = ({ latitude, longitude, deleteCity }) => {
   const [weather, setWeather] = useState({
@@ -51,7 +52,7 @@ const City = ({ latitude, longitude, deleteCity }) => {
 
   return isDeleted ? null : (
     <div
-      className={cardClassName}
+      className={`${cardClassName}`}
       onMouseOver={() => setShowDelete(true)}
       onMouseLeave={() => setShowDelete(false)}
     >

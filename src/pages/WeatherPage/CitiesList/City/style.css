@@ -20,6 +20,7 @@
   transform: scale(1.02);
   cursor: pointer;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  animation: border-hovering 2s infinite;
 }
 
 .city-name {
@@ -126,4 +127,17 @@
 
 .delete-btn:active {
   color: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes border-hovering {
+  0% {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  }
 }
