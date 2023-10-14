@@ -52,7 +52,7 @@ const City = ({ latitude, longitude, deleteCity }) => {
 
   return isDeleted ? null : (
     <div
-      className={`${cardClassName}`}
+      className={cardClassName}
       onMouseOver={() => setShowDelete(true)}
       onMouseLeave={() => setShowDelete(false)}
     >
