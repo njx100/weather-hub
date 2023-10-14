@@ -67,13 +67,14 @@
   right: 500px;
 } */
 
-.close-icon {
+.header-close-icon {
   position: absolute;
-  left: 16rem;
+  font-size: 3rem;
+  right: 3rem;
   top: 2rem;
 }
 
-.close-icon:hover {
+.header-close-icon:hover {
   color: orange;
 }
 

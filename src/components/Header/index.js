@@ -25,13 +25,13 @@ const Header = () => {
       <div className={`dashboard-container ${dashboardClassname}`}>
         <div className="dashboard">
           <button
-            className="close-btn"
+            className="header-close-btn"
             onClick={() => {
               setShowMenu(false);
               allowScroll();
             }}
           >
-            <AiOutlineClose className="close-icon" />
+            <AiOutlineClose className="header-close-icon" />
           </button>
           <Link to={"/"}>Weather</Link>
           <Link to={"/news"}>News</Link>
