@@ -13,6 +13,13 @@ const WeatherPage = () => {
   const userInfoApi = "https://6518f495818c4e98ac5ffd9f.mockapi.io/signup";
   const { username, favCities } = userData;
 
+  const checkSessionStorage = () => {
+    if (!sessionStorage.getItem("id") && !sessionStorage.getItem("username")) {
+      sessionStorage.setItem("id", "1");
+      sessionStorage.setItem("username", "Guest");
+    }
+  };
+
   const getUserData = async (id) => {
     setIsLoading(true);
     const response = await axios.get(userInfoApi + "/" + id);
@@ -25,6 +32,7 @@ const WeatherPage = () => {
   };
 
   useEffect(() => {
+    checkSessionStorage();
     getUserData(sessionStorage.getItem("id") || "1");
   }, []);
 
