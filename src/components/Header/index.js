@@ -1,24 +1,36 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-
+import useScrollBlock from "../useScrollBlock/useScrollBlock";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-
 import "./style.css";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const dashboardClassname = `${showMenu ? "dashboard-showed" : null}`;
+  const [blockScroll, allowScroll] = useScrollBlock();
 
   return (
     <div className="header">
       {showMenu ? null : (
-        <button className="menu-btn" onClick={() => setShowMenu(true)}>
+        <button
+          className="menu-btn"
+          onClick={() => {
+            setShowMenu(true);
+            blockScroll();
+          }}
+        >
           <AiOutlineMenu className="menu-icon" />
         </button>
       )}
       <div className={`dashboard-container ${dashboardClassname}`}>
         <div className="dashboard">
-          <button className="close-btn" onClick={() => setShowMenu(false)}>
+          <button
+            className="close-btn"
+            onClick={() => {
+              setShowMenu(false);
+              allowScroll();
+            }}
+          >
             <AiOutlineClose className="close-icon" />
           </button>
           <Link to={"/"}>Weather</Link>
