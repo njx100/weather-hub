@@ -9,6 +9,10 @@
   animation: fade-in 2s ease-in;
 }
 
+.container {
+  padding-top: 8rem;
+}
+
 .loading-container {
   width: 100%;
   display: flex;

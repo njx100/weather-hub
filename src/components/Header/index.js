@@ -1,16 +1,42 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import useScrollBlock from "../useScrollBlock/useScrollBlock";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import "./style.css";
 
-const Header = ({ username }) => {
+const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const dashboardClassname = `${showMenu ? "dashboard-showed" : null}`;
+  const [blockScroll, allowScroll] = useScrollBlock();
+
   return (
     <div className="header">
-      <div className="logo"></div>
-      <div className="nav-link">
-        <Link to="/">Weather</Link>
-        <Link to="/news">News</Link>
-      </div>
-      <div className="login">
-        <Link to="/login">{username}</Link>
+      {showMenu ? null : (
+        <button
+          className="menu-btn"
+          onClick={() => {
+            setShowMenu(true);
+            blockScroll();
+          }}
+        >
+          <AiOutlineMenu className="menu-icon" />
+        </button>
+      )}
+      <div className={`dashboard-container ${dashboardClassname}`}>
+        <div className="dashboard">
+          <button
+            className="header-close-btn"
+            onClick={() => {
+              setShowMenu(false);
+              allowScroll();
+            }}
+          >
+            <AiOutlineClose className="header-close-icon" />
+          </button>
+          <Link to={"/"}>Weather</Link>
+          <Link to={"/news"}>News</Link>
+          <Link to={"/login"}>Logout</Link>
+        </div>
       </div>
     </div>
   );

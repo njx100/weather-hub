@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Button, Checkbox, Form, Input, Select, Space } from "antd";
 import "./style.css";
-import { v4 as uuidv4 } from "uuid";
 import swal from "sweetalert";
 import * as Icon from "react-feather";
 const { Option } = Select;
@@ -13,7 +12,6 @@ const SignupForm = ({ dataAccount, addUserAccount }) => {
   const navigate = useNavigate();
   const onFinish = (values) => {
     const new_Account = Object.assign(values, {
-      idv4: uuidv4(),
       favCities: [],
     });
     addUserAccount(new_Account);

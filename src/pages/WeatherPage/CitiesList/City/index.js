@@ -26,10 +26,12 @@ const City = ({ latitude, longitude, deleteCity }) => {
     text = text.toLowerCase();
     text.includes("sunny") && setWeatherStatus("sunny");
     text.includes("clear") && setWeatherStatus("night");
-    text.includes("cloudy") && setWeatherStatus("partly-cloudy");
+    (text.includes("cloudy") || text.includes("overcast")) &&
+      setWeatherStatus("partly-cloudy");
     text.includes("thunder") && setWeatherStatus("thunder-storm");
     text.includes("snow") && setWeatherStatus("snow");
-    text.includes("rain") && setWeatherStatus("rain");
+    (text.includes("rain") || text.includes("drizzle")) &&
+      setWeatherStatus("rain");
   };
 
   const getWeather = async () => {

@@ -1,4 +1,4 @@
-ul {
+.ul {
   list-style-type: none;
   display: flex;
   padding-left: 0 !important;
@@ -8,17 +8,13 @@ ul {
   font-weight: 500;
 }
 
-h1,
-h2,
-h3,
-h6,
-p {
-  color: white !important;
+
+.title-story-left {
+  color: white ;
   font-weight: 700;
   text-align: start;
   margin: 0;
 }
-
 
 
 .bgr-color {
@@ -124,7 +120,7 @@ p {
 .card .card-body {
   text-align: start;
 }
-p {
+.p-describe {
   font-weight: 500;
   color: #535355 !important;
 }
@@ -167,4 +163,9 @@ hr {
 }
 .small {
   font-size: 0.8rem !important;
+}
+
+.card:hover { 
+  margin: 0.4em;
+  transition: all  ease-in-out 1s;
 }

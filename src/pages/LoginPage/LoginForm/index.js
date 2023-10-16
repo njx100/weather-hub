@@ -1,31 +1,51 @@
-import { Form, Input, Button, Checkbox, Card } from "antd";
+import { Form, Input, Button, notification, Space } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { Typography } from "antd";
 import { useNavigate } from "react-router-dom";
 import * as Icon from "react-feather";
+import swal from "sweetalert";
+import { useEffect, useState } from "react";
 
 import "./style.css";
 const { Title } = Typography;
 
 const LoginForm = ({ dataAccount }) => {
+  const [api, contextHolder] = notification.useNotification();
+
+  const [isPassword, setIsPassword] = useState(false);
+  const [isUserName, setIsUserName] = useState(false);
+
+
   sessionStorage.setItem("id", "");
   sessionStorage.setItem("username", "");
-  const navigate = useNavigate();
+  const openNotificationWithIcon = (type) => {
+    if (!dataAccount.some(e => e.username === isUserName)) {
+      api[type]({
+        message: `User name does not exist`,
+      });
+    } else if (!isPassword) {
+      api[type]({
+        message: `Incorrect password` ,
+      });
+    }}
+    
 
+  const navigate = useNavigate();
   const onFinish = (values) => {
-    console.log(values)
-    console.log(dataAccount)
+    console.log(values);
+    console.log(dataAccount);
     dataAccount.some((element) => {
-      if (
-        element.username === values.username &&
-        element.password === values.password
-      ) {
+      if (element.username === values.username) {
+        setIsUserName(true)
+      } else if (element.password === values.password) {
         sessionStorage.setItem("id", element.id);
         sessionStorage.setItem("username", element.username);
         navigate("/");
       }
     });
   };
+
+
 
   return (
     <div className="card-login-form">
@@ -42,13 +62,16 @@ const LoginForm = ({ dataAccount }) => {
         <h3 className="title-login-form pd-title">Login to your Account</h3>
         <Form.Item
           name="username"
-          rules={[{ required: true, message: "Please input your Username!" }]}
+          rules={[
+            { required: true, message: "Please input your Username!" },
+          ]}
           className="userName"
         >
           <Input
             prefix={<UserOutlined className="site-form-item-icon" />}
             placeholder="Username"
             className="pd-form"
+            onChange={(e) => setIsUserName(e.target.value)}
           />
         </Form.Item>
         <Form.Item
@@ -68,6 +91,7 @@ const LoginForm = ({ dataAccount }) => {
             htmlType="submit"
             className="login-form-button"
             block
+            onClick={() => openNotificationWithIcon("error")}
           >
             Sign in
           </Button>
@@ -102,21 +126,21 @@ const LoginForm = ({ dataAccount }) => {
             </a>
           </div>
         </div>
-
       </div>
       {/* Create new account  */}
-      <div className="text-align-center" >
+      <div className="text-align-center">
         Don't have an account?{" "}
-          <Button
-            style={{ padding: 0, color:"#1E2F97", fontWeight: 600}}
-            type="none"
-            onClick={() => {
-              navigate("/signup");
-            }}
-          >
-            Sign Up
-          </Button>
+        <Button
+          style={{ padding: 0, color: "#1E2F97", fontWeight: 600 }}
+          type="none"
+          onClick={() => {
+            navigate("/signup");
+          }}
+        >
+          Sign Up
+        </Button>
       </div>
+      {contextHolder}
     </div>
   );
 };

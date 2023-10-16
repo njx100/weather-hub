@@ -24,8 +24,8 @@ function StoryForYou({ data }) {
               {data.title}
             </a>
           </h5>
-          <p className="card-text">{data.abstract}</p>
-          <ul>
+          <p className="card-text p-describe">{data.abstract}</p>
+          <ul className="ul">
             <li className="nav-item">{data.byline}</li>
             <li className="nav-item">{result}</li>
           </ul>
