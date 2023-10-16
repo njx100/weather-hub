@@ -33,7 +33,7 @@ const WeatherPage = () => {
 
   useEffect(() => {
     checkSessionStorage();
-    getUserData(sessionStorage.getItem("id") || "1");
+    getUserData(sessionStorage.getItem("id"));
   }, []);
 
   return (

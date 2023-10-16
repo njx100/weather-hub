@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Button, Checkbox, Form, Input, Select } from "antd";
 import "./style.css";
-import { v4 as uuidv4 } from "uuid";
 const { Option } = Select;
 
 const SignupForm = ({ data_Account, addUserAccount }) => {
@@ -29,7 +28,6 @@ const SignupForm = ({ data_Account, addUserAccount }) => {
           alert(`Phone has already`);
         } else {
           const new_Account = Object.assign(values, {
-            id: uuidv4(),
             favCities: [],
           });
           addUserAccount(new_Account);
