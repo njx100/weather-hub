@@ -4,8 +4,8 @@ import useScrollBlock from "../../../useScrollBlock/useScrollBlock";
 import "./style.css";
 import BackgroundContext from "../../../BackgroundContext";
 
-const ChangeBackGround = ({ setShowChangeBG }) => {
-  const [selectedBG, setSelectedBG] = useState("a");
+const ChangeBackGround = ({ setShowChangeBG, selectedBG, setSelectedBG }) => {
+  //   const [selectedBG, setSelectedBG] = useState("a");
   const { setBackground } = useContext(BackgroundContext);
   const handleClick = (theme, bgName) => {
     setSelectedBG(theme);
@@ -41,7 +41,7 @@ const ChangeBackGround = ({ setShowChangeBG }) => {
             src="https://i.imgur.com/lvORjj5.jpg"
             alt="dramatic sunset"
           />
-          <p className="theme-text">Dracmatic sunset</p>
+          <p className="theme-text">Dramatic sunset</p>
         </div>
         <div className="background">
           <img

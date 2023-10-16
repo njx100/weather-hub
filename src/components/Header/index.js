@@ -11,6 +11,7 @@ const Header = () => {
   const [showChangeBG, setShowChangeBG] = useState(false);
   const dashboardClassname = `${showMenu ? "dashboard-showed" : null}`;
   const [blockScroll, allowScroll] = useScrollBlock();
+  const [selectedBG, setSelectedBG] = useState("a");
 
   return (
     <div className="header">
@@ -42,7 +43,13 @@ const Header = () => {
         </div>
       </div>
       <DropDown setShowChangeBG={setShowChangeBG} className="dropdown" />
-      {showChangeBG && <ChangeBackGround setShowChangeBG={setShowChangeBG} />}
+      {showChangeBG && (
+        <ChangeBackGround
+          setShowChangeBG={setShowChangeBG}
+          selectedBG={selectedBG}
+          setSelectedBG={setSelectedBG}
+        />
+      )}
     </div>
   );
 };
