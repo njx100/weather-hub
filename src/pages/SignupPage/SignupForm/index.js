@@ -4,7 +4,9 @@ import { Button, Checkbox, Form, Input, Select, Space } from "antd";
 import "./style.css";
 import swal from "sweetalert";
 import * as Icon from "react-feather";
+import logo from "../../../utilities/153859090/Logo Files/For Web/svg/Color logo - no background.svg"
 const { Option } = Select;
+
 
 const SignupForm = ({ dataAccount, addUserAccount }) => {
   const [isAccepted, setIsAccepted] = useState(false);
@@ -25,17 +27,17 @@ const SignupForm = ({ dataAccount, addUserAccount }) => {
   };
   return (
     <div className="card-login-form">
-      <Button 
+      <Button
         onClick={() => {
           navigate("/login");
         }}
         className="return-login"
       >
-        <Icon.ArrowLeft size={15} color="#1E2F97" />
+        <Icon.ArrowLeft size={15} color="#141137" />
         Login Page
       </Button>
       <div className="logo-signup text-align-center">
-        <Icon.Sunrise />
+        <img src={logo} style={{width: "50%", backgroundSize: "cover"}}/>
       </div>
       <Form
         className="signup"
@@ -178,7 +180,7 @@ const SignupForm = ({ dataAccount, addUserAccount }) => {
             disabled={!isAccepted}
             type="primary"
             block
-            style={{ background: "#1E2F97", color: "whitesmoke" }}
+            style={{ background: "#141137", color: "whitesmoke" }}
           >
             Sign up
           </Button>

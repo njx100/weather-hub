@@ -3,41 +3,45 @@ import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { Typography } from "antd";
 import { useNavigate } from "react-router-dom";
 import * as Icon from "react-feather";
-import swal from "sweetalert";
-import { useEffect, useState } from "react";
-
+import {  useEffect, useState } from "react";
 import "./style.css";
+import logo from "../../../utilities/153859090/Logo Files/For Web/svg/Color logo - no background.svg"
+
 const { Title } = Typography;
 
+
 const LoginForm = ({ dataAccount }) => {
+  
   const [api, contextHolder] = notification.useNotification();
 
   const [isPassword, setIsPassword] = useState(false);
   const [isUserName, setIsUserName] = useState(false);
 
-
   sessionStorage.setItem("id", "");
   sessionStorage.setItem("username", "");
+  const navigate = useNavigate();
+
+
   const openNotificationWithIcon = (type) => {
+    console.log('dataAccount :>> ', dataAccount);
+    navigate("#");
+
     if (!dataAccount.some(e => e.username === isUserName)) {
       api[type]({
         message: `User name does not exist`,
       });
-    } else if (!isPassword) {
+    } else if (!dataAccount.some(e => e.password === isPassword)) {
+      console.log(isPassword)
       api[type]({
         message: `Incorrect password` ,
       });
     }}
     
 
-  const navigate = useNavigate();
   const onFinish = (values) => {
-    console.log(values);
     console.log(dataAccount);
     dataAccount.some((element) => {
-      if (element.username === values.username) {
-        setIsUserName(true)
-      } else if (element.password === values.password) {
+      if (element.username === values.username && element.password === values.password) {
         sessionStorage.setItem("id", element.id);
         sessionStorage.setItem("username", element.username);
         navigate("/");
@@ -50,7 +54,7 @@ const LoginForm = ({ dataAccount }) => {
   return (
     <div className="card-login-form">
       <div className="logo-signup text-align-center">
-        <Icon.CloudDrizzle size={80} color="#1E2F97" />
+        <img src={logo} style={{width: "50%"}}/>
       </div>
       <Form
         name="normal_login"
@@ -82,6 +86,8 @@ const LoginForm = ({ dataAccount }) => {
             className="pd-form"
             prefix={<LockOutlined className="site-form-item-icon" />}
             placeholder="Password"
+            onChange={(e) => setIsPassword(e.target.value)}
+
           />
         </Form.Item>
         <Form.Item>

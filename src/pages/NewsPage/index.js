@@ -8,6 +8,7 @@ import StoryForYouRight from "./StoryForYou/StoryForYouRight";
 import MainTop from "./MainTopStart/MainTop";
 import { Circles } from "@agney/react-loading";
 
+
 const NewsPage = () => {
   const key = "gtIzOCHkHAa2NhIBjC7Zm0tMZz6AFHAy";
   const urlCard = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${key}`;
@@ -30,11 +31,10 @@ const NewsPage = () => {
     setVisibleItems((pre) => pre + 4);
   };
   return (
-    <div className="bgr-color">
+    <div className="bgr-color ">
     <Header />
    {!isLoading ? (
     <div>
-
     {dataNews.slice(11, 12).map((data) => (
       <MainTop data={data} />
     ))}

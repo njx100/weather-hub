@@ -1,9 +1,12 @@
 import SignupForm from "./SignupForm";
 import "./style.css";
+import background from "../../utilities/images/background/vecteezy_dramatic-sunset-wildlife-landscape-illustration_10226933.jpg"
+
 
 const SignupPage = ({ addUserAccount, dataAccount }) => {
+  console.log(background)
   return (
-    <div className="middle">
+    <div className="middle" style={{backgroundImage: `url(${background})`, }}> 
       <SignupForm addUserAccount={addUserAccount} dataAccount={dataAccount} />
     </div>
   );
