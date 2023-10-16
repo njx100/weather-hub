@@ -18,7 +18,7 @@ function StoryForYou({ data }) {
           src={data.multimedia[Object.keys(data.multimedia)[0]].url}
           alt={data.multimedia[Object.keys(data.multimedia)[0]].type}
         />
-        <div className="card-body pt-3 px-0">
+        <div className="card-body pt-3 ">
           <h5 className="card-title">
             <a className="btn-link btn-link-handle" href={data.url}>
               {data.title}
