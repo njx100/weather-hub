@@ -3,7 +3,6 @@ import AddCity from "./AddCity";
 import City from "./City";
 import SearchPopup from "./SearchPopup";
 import { v4 as uuidv4 } from "uuid";
-import axios from "axios";
 import "./style.css";
 
 const CitiesList = ({ favCities, updateCitiesList }) => {

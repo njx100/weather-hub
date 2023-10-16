@@ -1,5 +1,6 @@
 import "./style.css";
 import { useRef, useState, useEffect } from "react";
+import useScrollBlock from "../../../../components/useScrollBlock/useScrollBlock";
 import { Input, Button } from "antd";
 import { AiOutlineClose } from "react-icons/ai";
 import axios from "axios";
@@ -14,6 +15,8 @@ const SearchPopup = ({ setIsPopupOpen, addCity }) => {
   const [cities, setCities] = useState([]);
   const [unableToFind, setUnableToFind] = useState();
   const [count, setCount] = useState(0);
+  const [blockScroll, allowScroll] = useScrollBlock();
+  blockScroll();
   const CITY_API = "https://api.api-ninjas.com/v1/geocoding?city=";
   const APIKEY = "Lx/04NVq3uaisIHXy5WPcQ==bjnoRIGlsFFXZUfj";
 
@@ -34,6 +37,7 @@ const SearchPopup = ({ setIsPopupOpen, addCity }) => {
   const handleSelectCity = (city) => {
     setIsPopupOpen(false);
     addCity(city);
+    allowScroll();
   };
 
   useEffect(() => {
@@ -69,6 +73,7 @@ const SearchPopup = ({ setIsPopupOpen, addCity }) => {
         <Button
           className="close-btn"
           onClick={() => {
+            allowScroll();
             setIsPopupOpen(false);
           }}
         >

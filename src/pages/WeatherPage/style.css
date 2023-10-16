@@ -1,6 +1,25 @@
-.weather-page {
-  background: url(/src/utilities/images/background/vecteezy_blue-mountain-landscape-background-illustration_7692868.jpg)
-    no-repeat center center fixed;
+.weather-page-blue-mountain {
+  background: url(https://i.imgur.com/hW4qLSe.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  animation: fade-in 2s ease-in;
+}
+
+.weather-page-morning-mountain {
+  background: url(https://i.imgur.com/KV7myHQ.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  animation: fade-in 2s ease-in;
+}
+
+.weather-page-dramatic-sunset {
+  background: url(https://i.imgur.com/lvORjj5.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
