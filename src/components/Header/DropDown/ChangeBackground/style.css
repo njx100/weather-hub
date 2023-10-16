@@ -1,0 +1,89 @@
+.container-bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0rem;
+}
+
+.change-bg-popup {
+  position: relative;
+  width: 50%;
+  height: 30vh;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -5rem;
+}
+
+button {
+  all: unset;
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+}
+
+.backbround {
+  display: flex;
+  flex-direction: column;
+}
+
+.change-bg-close-icon {
+  font-size: 2rem;
+}
+
+.theme {
+  width: 220px;
+  height: 170px;
+  margin: auto 1rem;
+  margin-top: 2.5rem;
+  border-radius: 15px;
+  border: 5px white solid;
+  transition: all 300ms ease;
+}
+
+.theme:hover {
+  border: orange 5px solid;
+}
+
+.theme-text {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.active {
+  border: orange 5px solid;
+}
+
+/* .blue-mountain {
+  width: 250px;
+  height: 200px;
+} */
+
+.radio-btn {
+  width: 200px;
+  height: 200px;
+}
+
+.blue-mountain {
+  background-image: url(https://i.imgur.com/hW4qLSe.jpg);
+}
+
+.dramatic-sunset {
+  background-image: url(https://i.imgur.com/lvORjj5.jpg);
+}
+
+.morning-mountain {
+  background-image: url(https://i.imgur.com/KV7myHQ.jpg);
+}
