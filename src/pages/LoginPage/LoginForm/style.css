@@ -1,0 +1,53 @@
+
+.card-login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 500px;
+
+}
+
+.text-align-center {
+    text-align: center;
+}
+.title-login-form {
+    color: black !important;
+
+   font-size: 1.5em;
+
+}
+.ant-form-item {
+    margin: 1em 2em!important;
+}
+.pd-form {
+    padding:0.5em ;
+}
+.pd-title {
+    padding: 0.3em 1.5em;
+}
+.css-dev-only-do-not-override-pr0fja .ant-btn.ant-btn-block {
+    height: 3em;
+}
+
+.pd-login-icon {
+    padding: 0 2em;
+}
+
+.bg-github {
+    background-color: white;
+    border: 1px solid rgb(239, 233, 233);
+}
+.bg-facebook-login {
+    background-color: white;
+    border: 1px solid rgb(239, 233, 233);
+}
+.bg-twitter {
+    background-color: white;
+    border: 1px solid rgb(239, 233, 233);
+}
+@media only screen and (max-width: 600px) {
+    .card-login-form {
+        width: 100%;
+    }
+  }

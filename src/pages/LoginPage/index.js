@@ -1,17 +1,17 @@
 import LoginForm from "./LoginForm";
 import { useEffect } from "react";
 import "./style.css";
-const LoginPage = ({ data_Account, fetchUsersData }) => {
+const LoginPage = ({ dataAccount, getUserInfo }) => {
   useEffect(() => {
-    fetchUsersData();
+    getUserInfo();
   }, []);
 
   return (
     <div className="outer">
       <div className="middle section">
         <LoginForm
-          data_Account={data_Account}
-          fetchUsersData={fetchUsersData}
+          dataAccount={dataAccount}
+          getUserInfo={getUserInfo}
         />
       </div>
     </div>

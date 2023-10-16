@@ -4,7 +4,6 @@ import CitiesList from "./CitiesList";
 import { DEFAULT_USER } from "../../utilities/user";
 import axios from "axios";
 import { Puff } from "@agney/react-loading";
-// import { v4 as uuidv4 } from "uuid";
 import "./style.css";
 
 const WeatherPage = () => {
@@ -23,9 +22,11 @@ const WeatherPage = () => {
   const getUserData = async (id) => {
     setIsLoading(true);
     const response = await axios.get(userInfoApi + "/" + id);
+
     setUserData(response.data);
     setIsLoading(false);
-  };
+  }
+  
 
   const updateCitiesList = async (id, cities) => {
     axios.put(userInfoApi + "/" + id, cities);

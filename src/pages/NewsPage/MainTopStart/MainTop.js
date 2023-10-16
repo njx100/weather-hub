@@ -13,7 +13,7 @@ function MainTop({ data }) {
           {/* <!-- Left big card --> */}
           <div class="col-lg-6">
             <div
-              class="card card-overlay-bottom card-grid-lg card-bg-scale"
+              class="card card-overlay-bottom card-grid-lg card-bg-scale "
               style={{
                 backgroundImage: `url(${urlImg}) `,
                 backgroundSize: "cover",
@@ -27,7 +27,7 @@ function MainTop({ data }) {
                   <h2 class="text-white h2">
                     <a
                       href={data.url}
-                      class="btn-link stretched-link text-reset"
+                      class="btn-link stretched-link text-reset btn-link-handle"
                     >
                       {data.title}.
                     </a>
@@ -63,7 +63,7 @@ function MainTop({ data }) {
                       <h4 class="text-white">
                         <a
                           href={data.url}
-                          class="btn-link stretched-link text-reset"
+                          class="btn-link stretched-link text-reset btn-link-handle"
                         >
                           {data.title}.
                         </a>
@@ -95,7 +95,7 @@ function MainTop({ data }) {
                       <h4 class="text-white">
                         <a
                           href={data.url}
-                          class="btn-link stretched-link text-reset"
+                          class="btn-link stretched-link text-reset btn-link-handle"
                         >
                           {data.title}.
                         </a>
@@ -127,7 +127,7 @@ function MainTop({ data }) {
                       <h4 class="text-white">
                         <a
                           href={data.url}
-                          class="btn-link stretched-link text-reset"
+                          class="btn-link stretched-link text-reset btn-link-handle"
                         >
                           {data.title}
                         </a>
