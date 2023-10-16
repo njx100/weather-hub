@@ -3,6 +3,7 @@ import { useState } from "react";
 import useScrollBlock from "../useScrollBlock/useScrollBlock";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import "./style.css";
+import DropDown from "./DropDown";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -38,6 +39,7 @@ const Header = () => {
           <Link to={"/login"}>Logout</Link>
         </div>
       </div>
+      <DropDown className="user-dropdown" />
     </div>
   );
 };
