@@ -1,22 +1,21 @@
 {
   "files": {
-    "main.css": "/weather-hub/static/css/main.70be3397.css",
-    "main.js": "/weather-hub/static/js/main.3795deb0.js",
+    "main.css": "/weather-hub/static/css/main.7a4893a5.css",
+    "main.js": "/weather-hub/static/js/main.980edb68.js",
     "static/js/787.bb689d49.chunk.js": "/weather-hub/static/js/787.bb689d49.chunk.js",
     "static/media/snow.svg": "/weather-hub/static/media/snow.ea60396682505578142d.svg",
-    "static/media/vecteezy_blue-mountain-landscape-background-illustration_7692868.jpg": "/weather-hub/static/media/vecteezy_blue-mountain-landscape-background-illustration_7692868.31e550167d0e5e5ac411.jpg",
     "static/media/partly_cloudy.svg": "/weather-hub/static/media/partly_cloudy.3cc80f2c264bc367508c.svg",
     "static/media/sunny.svg": "/weather-hub/static/media/sunny.207f3b39a68d380f84b3.svg",
     "static/media/thunder_storm.svg": "/weather-hub/static/media/thunder_storm.214b22e0ac2c8a926db5.svg",
     "static/media/rain.svg": "/weather-hub/static/media/rain.b99dc426de15c93fd9e3.svg",
     "static/media/night.svg": "/weather-hub/static/media/night.7c6f376387d87f4a8dfd.svg",
     "index.html": "/weather-hub/index.html",
-    "main.70be3397.css.map": "/weather-hub/static/css/main.70be3397.css.map",
-    "main.3795deb0.js.map": "/weather-hub/static/js/main.3795deb0.js.map",
+    "main.7a4893a5.css.map": "/weather-hub/static/css/main.7a4893a5.css.map",
+    "main.980edb68.js.map": "/weather-hub/static/js/main.980edb68.js.map",
     "787.bb689d49.chunk.js.map": "/weather-hub/static/js/787.bb689d49.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.70be3397.css",
-    "static/js/main.3795deb0.js"
+    "static/css/main.7a4893a5.css",
+    "static/js/main.980edb68.js"
   ]
 }
