@@ -1,3 +1,8 @@
+/* .header {
+  display: flex;
+  justify-content: center;
+} */
+
 .menu-btn {
   all: unset;
   position: absolute;
@@ -14,6 +19,13 @@
 
 .menu-icon:hover {
   opacity: 1;
+}
+
+.header-logo {
+  position: absolute;
+  width: 350px;
+  bottom: 8rem;
+  left: 10rem;
 }
 
 .dashboard-container {
@@ -37,12 +49,12 @@
 }
 
 .dashboard {
-  padding-top: 8rem;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  padding-top: 8rem;
   /* align-items: center; */
 }
 

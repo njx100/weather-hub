@@ -49,6 +49,11 @@ const Header = () => {
             >
               <AiOutlineClose className="header-close-icon" />
             </button>
+            <img
+              className="header-logo"
+              src="https://i.imgur.com/Wy32Q0B.png"
+              alt=""
+            />
             <Link className="nav-item" to={"/"} onClick={() => allowScroll()}>
               Weather
             </Link>
@@ -72,6 +77,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+
       <DropDown
         setShowChangeBG={setShowChangeBG}
         checkSessionStorage={checkSessionStorage}
