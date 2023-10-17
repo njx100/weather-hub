@@ -44,7 +44,9 @@ const City = ({ latitude, longitude, deleteCity }) => {
   };
 
   const handleDelete = () => {
+    setIsLoading(true);
     deleteCity(latitude, longitude);
+    setIsLoading(false);
     setIsDeleted(true);
   };
 

@@ -1,5 +1,5 @@
 import Dropdown from "antd/es/dropdown/dropdown";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useScrollBlock from "../../useScrollBlock/useScrollBlock";
 import {
@@ -9,8 +9,8 @@ import {
 } from "react-icons/ai";
 import "./style.css";
 
-const DropDown = ({ setShowChangeBG }) => {
-  const [username, setUsername] = useState(sessionStorage.getItem("username"));
+const DropDown = ({ setShowChangeBG, checkSessionStorage }) => {
+  const [username, setUsername] = useState("");
   const items = [
     {
       label: (
@@ -24,7 +24,7 @@ const DropDown = ({ setShowChangeBG }) => {
 
     {
       label: (
-        <Link to={"./login"} className="dropdown-link">
+        <Link to={"/login"} className="dropdown-link">
           Logout
         </Link>
       ),
@@ -32,6 +32,12 @@ const DropDown = ({ setShowChangeBG }) => {
       key: "2",
     },
   ];
+
+  useEffect(() => {
+    checkSessionStorage();
+    setUsername(sessionStorage.getItem("username"));
+  }, []);
+
   return (
     <Dropdown menu={{ items }}>
       <a className="user-dropdown">
