@@ -47,7 +47,7 @@ const WeatherPage = () => {
 
   return (
     <div className={background}>
-      <Header checkSessionStorage={checkSessionStorage} />
+      <Header />
       <div className="container">
         {!isLoading ? (
           <CitiesList
