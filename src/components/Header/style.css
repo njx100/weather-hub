@@ -74,3 +74,9 @@
 .header-close-icon:hover {
   color: orange;
 }
+
+a.nav-item {
+  text-decoration-line: none;
+  font-weight: 700;
+  transform: scaleX(1.15);
+}

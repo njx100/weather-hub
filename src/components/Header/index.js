@@ -38,9 +38,15 @@ const Header = ({ checkSessionStorage }) => {
           >
             <AiOutlineClose className="header-close-icon" />
           </button>
-          <Link to={"/"}>Weather</Link>
-          <Link to={"/news"}>News</Link>
-          <Link to={"/about"}>About</Link>
+          <Link className="nav-item" to={"/"}>
+            Weather
+          </Link>
+          <Link className="nav-item" to={"/news"}>
+            News
+          </Link>
+          <Link className="nav-item" to={"/about"}>
+            About
+          </Link>
         </div>
       </div>
       <DropDown
