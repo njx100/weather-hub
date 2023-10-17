@@ -4,7 +4,7 @@
 }
 
 .menu-icon {
-  position: fixed;
+  position: absolute;
   font-size: 4rem;
   color: white;
   margin-top: 3rem;
@@ -41,22 +41,31 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  /* align-items: center; */
 }
 
 .dashboard-showed {
   transform: translateX(700px);
 }
 
+.dashboard-nav {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+
 .dashboard a {
   color: black;
   font-size: 5rem;
   transition: all ease-in-out 300ms;
+  margin-left: 6rem;
+  margin-top: 1.5rem;
 }
 
 .dashboard a:hover {
-  font-size: 6rem;
+  transform: scale(1.2);
 }
 
 .header-close-btn {
@@ -73,4 +82,14 @@
 
 .header-close-icon:hover {
   color: orange;
+}
+
+a.nav-item {
+  text-decoration-line: none;
+  font-weight: 700;
+  transform: scaleX(1.15);
+}
+
+.dashboard-footer {
+  margin: 2rem;
 }

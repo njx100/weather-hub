@@ -13,6 +13,7 @@ const ChangeBackGround = ({ setShowChangeBG, selectedBG, setSelectedBG }) => {
   };
   const [blockScroll, allowScroll] = useScrollBlock();
   useEffect(() => {
+    console.log("change background scroll block");
     blockScroll();
   }, []);
 
