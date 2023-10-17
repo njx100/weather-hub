@@ -50,7 +50,7 @@
 }
 
 .dashboard a {
-  color: black !important;
+  color: black;
   font-size: 5rem;
   transition: all ease-in-out 300ms;
 }
