@@ -1,4 +1,4 @@
-.weather-page-blue-mountain {
+.blue-mountain {
   background: url(https://i.imgur.com/hW4qLSe.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -8,7 +8,7 @@
   animation: fade-in 2s ease-in;
 }
 
-.weather-page-morning-mountain {
+.morning-mountain {
   background: url(https://i.imgur.com/KV7myHQ.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -18,7 +18,7 @@
   animation: fade-in 2s ease-in;
 }
 
-.weather-page-dramatic-sunset {
+.dramatic-sunset {
   background: url(https://i.imgur.com/lvORjj5.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;

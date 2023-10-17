@@ -26,6 +26,21 @@
 
 .search-input {
   margin-bottom: 1rem;
+  /* background-color: white;
+  border-radius: 15px;
+  border: none; */
+}
+
+input.search-input input:focus {
+  outline: none;
+  background-color: white;
+  /* border: none;
+  box-shadow: none; */
+}
+
+.search-input button {
+  top: 0;
+  right: 0;
 }
 
 .close-btn {

@@ -6,7 +6,7 @@ import "./style.css";
 import DropDown from "./DropDown";
 import ChangeBackGround from "./DropDown/ChangeBackground";
 
-const Header = () => {
+const Header = ({ checkSessionStorage }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showChangeBG, setShowChangeBG] = useState(false);
   const dashboardClassname = `${showMenu ? "dashboard-showed" : null}`;
@@ -19,6 +19,7 @@ const Header = () => {
         <button
           className="menu-btn"
           onClick={() => {
+            console.log("block header");
             setShowMenu(true);
             blockScroll();
           }}
@@ -39,10 +40,14 @@ const Header = () => {
           </button>
           <Link to={"/"}>Weather</Link>
           <Link to={"/news"}>News</Link>
-          <Link to={"/login"}>Logout</Link>
+          <Link to={"/about"}>About</Link>
         </div>
       </div>
-      <DropDown setShowChangeBG={setShowChangeBG} className="dropdown" />
+      <DropDown
+        setShowChangeBG={setShowChangeBG}
+        checkSessionStorage={checkSessionStorage}
+        className="dropdown"
+      />
       {showChangeBG && (
         <ChangeBackGround
           setShowChangeBG={setShowChangeBG}
