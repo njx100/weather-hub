@@ -31,7 +31,6 @@ const Header = () => {
         <button
           className="menu-btn"
           onClick={() => {
-            console.log("block header");
             setShowMenu(true);
           }}
         >
