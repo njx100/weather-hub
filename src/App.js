@@ -5,10 +5,12 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import WeatherPage from "./pages/WeatherPage";
 import NewsPage from "./pages/NewsPage";
+
 import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import PageNotFound from "./pages/PageNotFound";
 import BackgroundContext from "./components/BackgroundContext";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   const [dataAccount, setdataAccount] = useState([]);
@@ -62,7 +64,7 @@ function App() {
           />
           <Route path="" exact element={<WeatherPage />} />
           <Route path="news" element={<NewsPage />} />
-
+          <Route path="about" element={<AboutPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>

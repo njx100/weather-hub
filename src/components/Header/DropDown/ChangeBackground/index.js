@@ -1,5 +1,5 @@
 import { AiOutlineClose } from "react-icons/ai";
-import { useState, useContext } from "react";
+import { useEffect, useContext } from "react";
 import useScrollBlock from "../../../useScrollBlock/useScrollBlock";
 import "./style.css";
 import BackgroundContext from "../../../BackgroundContext";
@@ -12,7 +12,10 @@ const ChangeBackGround = ({ setShowChangeBG, selectedBG, setSelectedBG }) => {
     setBackground(bgName);
   };
   const [blockScroll, allowScroll] = useScrollBlock();
-  blockScroll();
+  useEffect(() => {
+    console.log("change background scroll block");
+    blockScroll();
+  }, []);
 
   return (
     <div className="container-bg">
@@ -28,7 +31,7 @@ const ChangeBackGround = ({ setShowChangeBG, selectedBG, setSelectedBG }) => {
         </button>
         <div className="background ">
           <img
-            onClick={() => handleClick("a", "weather-page-blue-mountain")}
+            onClick={() => handleClick("a", "blue-mountain")}
             className={`theme ${selectedBG === "a" && "active"}`}
             src="https://i.imgur.com/hW4qLSe.jpg"
             alt="blue mountain"
@@ -37,7 +40,7 @@ const ChangeBackGround = ({ setShowChangeBG, selectedBG, setSelectedBG }) => {
         </div>
         <div className="background">
           <img
-            onClick={() => handleClick("b", "weather-page-dramatic-sunset")}
+            onClick={() => handleClick("b", "dramatic-sunset")}
             className={`theme ${selectedBG === "b" && "active"}`}
             src="https://i.imgur.com/lvORjj5.jpg"
             alt="dramatic sunset"
@@ -46,7 +49,7 @@ const ChangeBackGround = ({ setShowChangeBG, selectedBG, setSelectedBG }) => {
         </div>
         <div className="background">
           <img
-            onClick={() => handleClick("c", "weather-page-morning-mountain")}
+            onClick={() => handleClick("c", "morning-mountain")}
             className={`theme ${selectedBG === "c" && "active"}`}
             src="https://i.imgur.com/KV7myHQ.jpg"
             alt="morning mountain"

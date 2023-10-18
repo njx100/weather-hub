@@ -1,10 +1,15 @@
+/* .header {
+  display: flex;
+  justify-content: center;
+} */
+
 .menu-btn {
   all: unset;
   position: absolute;
 }
 
 .menu-icon {
-  position: fixed;
+  position: absolute;
   font-size: 4rem;
   color: white;
   margin-top: 3rem;
@@ -14,6 +19,13 @@
 
 .menu-icon:hover {
   opacity: 1;
+}
+
+.header-logo {
+  position: absolute;
+  width: 350px;
+  bottom: 8rem;
+  left: 10rem;
 }
 
 .dashboard-container {
@@ -37,26 +49,37 @@
 }
 
 .dashboard {
-  padding-top: 8rem;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding-top: 8rem;
+  /* align-items: center; */
 }
 
 .dashboard-showed {
   transform: translateX(700px);
 }
 
+.dashboard-nav {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+
 .dashboard a {
   color: black;
   font-size: 5rem;
   transition: all ease-in-out 300ms;
+  margin-left: 6rem;
+  margin-top: 1.5rem;
 }
 
-.dashboard a:hover {
-  font-size: 6rem;
+.dashboard a:hover,
+.dashboard-nav-active a {
+  transform: scale(1.2);
+  text-decoration: underline;
 }
 
 .header-close-btn {
@@ -73,4 +96,14 @@
 
 .header-close-icon:hover {
   color: orange;
+}
+
+a.nav-item {
+  text-decoration-line: none;
+  font-weight: 700;
+  transform: scaleX(1.15);
+}
+
+.dashboard-footer {
+  margin: 2rem;
 }
