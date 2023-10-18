@@ -1,6 +1,12 @@
 .cities-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+
   text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .cities-list {
+    justify-content: center;
+  }
 }

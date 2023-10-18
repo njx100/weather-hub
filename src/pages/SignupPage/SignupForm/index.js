@@ -4,9 +4,8 @@ import { Button, Checkbox, Form, Input, Select, Space } from "antd";
 import "./style.css";
 import swal from "sweetalert";
 import * as Icon from "react-feather";
-import logo from "../../../utilities/153859090/Logo Files/For Web/svg/Color logo - no background.svg"
+import logo from "../../../utilities/153859090/Logo Files/For Web/svg/Color logo - no background.svg";
 const { Option } = Select;
-
 
 const SignupForm = ({ dataAccount, addUserAccount }) => {
   const [isAccepted, setIsAccepted] = useState(false);
@@ -17,7 +16,7 @@ const SignupForm = ({ dataAccount, addUserAccount }) => {
       favCities: [],
     });
     addUserAccount(new_Account);
-    console.log(new_Account);
+
     swal(
       "Success",
       "Congratulations you can now see the weather",
@@ -28,7 +27,7 @@ const SignupForm = ({ dataAccount, addUserAccount }) => {
   return (
     <div className="card-login-form">
       <div className="logo-signup text-align-center">
-        <img src={logo} style={{width: "50%", backgroundSize: "cover"}}/>
+        <img src={logo} style={{ width: "50%", backgroundSize: "cover" }} />
       </div>
       <Form
         className="signup"
@@ -150,7 +149,10 @@ const SignupForm = ({ dataAccount, addUserAccount }) => {
             },
           ]}
         >
-          <Checkbox style={{color:"white"}} onChange={() => setIsAccepted((prev) => !prev)}>
+          <Checkbox
+            style={{ color: "white" }}
+            onChange={() => setIsAccepted((prev) => !prev)}
+          >
             I have read the{" "}
             <a className="text-ques" href="/#">
               agreement
@@ -171,13 +173,17 @@ const SignupForm = ({ dataAccount, addUserAccount }) => {
             disabled={!isAccepted}
             type="primary"
             block
-            style={{ background: "black", color: "whitesmoke", opacity: 0.8, fontWeight: 700 }}
+            style={{
+              background: "black",
+              color: "whitesmoke",
+              opacity: 0.8,
+              fontWeight: 700,
+            }}
           >
             Sign up
           </Button>
         </Space>
       </Form>
-    
     </div>
   );
 };

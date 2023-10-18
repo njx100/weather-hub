@@ -104,7 +104,7 @@ const Header = () => {
       <DropDown
         setShowChangeBG={setShowChangeBG}
         checkSessionStorage={checkSessionStorage}
-        className="dropdown"
+        // className="dropdown"
       />
       {showChangeBG && (
         <ChangeBackGround
