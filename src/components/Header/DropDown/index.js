@@ -39,7 +39,7 @@ const DropDown = ({ setShowChangeBG, checkSessionStorage }) => {
   }, []);
 
   return (
-    <Dropdown menu={{ items }}>
+    <Dropdown className="dropdown-container" menu={{ items }}>
       <a className="user-dropdown">
         Hi! {username}
         <AiOutlineDown className="dropdown-icon" />

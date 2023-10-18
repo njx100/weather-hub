@@ -126,3 +126,32 @@ a.nav-item {
     left: 12rem;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .dashboard-container {
+    color: black;
+    height: 100vh;
+    z-index: 100;
+    width: 100%;
+  }
+
+  .dashboard a {
+    font-size: 3rem;
+    margin-left: 3rem;
+  }
+
+  .header-logo {
+    position: absolute;
+    width: 200px;
+    bottom: 11rem;
+    left: 25%;
+  }
+
+  .menu-icon {
+    font-size: 3.5rem;
+    color: white;
+    margin-top: 3rem;
+    margin-left: 2.5rem;
+    opacity: 0.5;
+  }
+}

@@ -77,3 +77,22 @@ input.search-input input:focus {
 .warning {
   color: red;
 }
+
+@media only screen and (max-width: 500px) {
+  .popup-inner {
+    padding: 2rem;
+    height: 400px;
+  }
+
+  .search-input {
+    margin-top: 2rem;
+  }
+
+  .close-btn {
+    right: 1rem;
+  }
+
+  .search-result {
+    font-size: 1.1rem;
+  }
+}
