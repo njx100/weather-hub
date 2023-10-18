@@ -13,6 +13,7 @@ const Header = () => {
   const dashboardClassname = `${showMenu ? "dashboard-showed" : null}`;
   const [blockScroll, allowScroll] = useScrollBlock();
   const [selectedBG, setSelectedBG] = useState("a");
+  const [dashboardActive, setDashboardActive] = useState("weather");
   const checkSessionStorage = () => {
     if (
       (!sessionStorage.getItem("id") && !sessionStorage.getItem("username")) ||
@@ -54,20 +55,39 @@ const Header = () => {
               src="https://i.imgur.com/Wy32Q0B.png"
               alt=""
             />
-            <Link className="nav-item" to={"/"} onClick={() => allowScroll()}>
+            <Link
+              className={`nav-item ${
+                dashboardActive === "weather" && "dashboard-nav-active"
+              }`}
+              to={"/"}
+              onClick={() => {
+                setDashboardActive("weather");
+                allowScroll();
+              }}
+            >
               Weather
             </Link>
             <Link
-              className="nav-item"
+              className={`nav-item ${
+                dashboardActive === "news" && "dashboard-nav-active"
+              }`}
               to={"/news"}
-              onClick={() => allowScroll()}
+              onClick={() => {
+                setDashboardActive("news");
+                allowScroll();
+              }}
             >
               News
             </Link>
             <Link
-              className="nav-item"
+              className={`nav-item ${
+                dashboardActive === "about" && "dashboard-nav-active"
+              }`}
               to={"/about"}
-              onClick={() => allowScroll()}
+              onClick={() => {
+                setDashboardActive("about");
+                allowScroll();
+              }}
             >
               About
             </Link>
