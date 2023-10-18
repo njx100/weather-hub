@@ -1,3 +1,33 @@
+.blue-mountain {
+  background: url(https://i.imgur.com/hW4qLSe.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  animation: fade-in 2s ease-in;
+}
+
+.morning-mountain {
+  background: url(https://i.imgur.com/KV7myHQ.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  animation: fade-in 2s ease-in;
+}
+
+.dramatic-sunset {
+  background: url(https://i.imgur.com/lvORjj5.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  animation: fade-in 2s ease-in;
+}
+
 .ul {
   list-style-type: none;
   display: flex;
