@@ -5,7 +5,6 @@ import "./style.css";
 import BackgroundContext from "../../../BackgroundContext";
 
 const ChangeBackGround = ({ setShowChangeBG, selectedBG, setSelectedBG }) => {
-  //   const [selectedBG, setSelectedBG] = useState("a");
   const { setBackground } = useContext(BackgroundContext);
   const handleClick = (theme, bgName) => {
     setSelectedBG(theme);
@@ -13,14 +12,13 @@ const ChangeBackGround = ({ setShowChangeBG, selectedBG, setSelectedBG }) => {
   };
   const [blockScroll, allowScroll] = useScrollBlock();
   useEffect(() => {
-    console.log("change background scroll block");
     blockScroll();
   }, []);
 
   return (
     <div className="container-bg">
       <div className="change-bg-popup">
-        <button 
+        <button
           className="hambug-btn"
           onClick={() => {
             allowScroll();
