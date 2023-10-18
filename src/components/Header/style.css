@@ -76,8 +76,10 @@
   margin-top: 1.5rem;
 }
 
-.dashboard a:hover {
+.dashboard a:hover,
+.dashboard-nav-active a {
   transform: scale(1.2);
+  text-decoration: underline;
 }
 
 .header-close-btn {

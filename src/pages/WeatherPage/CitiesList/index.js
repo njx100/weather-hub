@@ -21,6 +21,7 @@ const CitiesList = ({ favCities, updateCitiesList }) => {
         return city;
       }
     });
+    setCities(newList);
     updateCitiesList(sessionStorage.getItem("id"), { favCities: newList });
   };
 
