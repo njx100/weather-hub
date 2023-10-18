@@ -1,6 +1,6 @@
 .city-card {
-  width: 400px;
-  height: 900px;
+  width: 370px;
+  height: 800px;
   position: relative;
   border-radius: 5rem;
   padding: 1.5rem 2rem;
@@ -25,6 +25,7 @@
 
 .city-name {
   font-weight: 700;
+  font-size: 1.8rem;
 }
 
 .sunny {
@@ -85,12 +86,12 @@
 }
 
 .city-temp {
-  font-size: 7rem;
-  margin-top: 2.5rem;
+  font-size: 6rem;
+  margin-top: 1.5rem;
 }
 
 .weather-condition {
-  margin-top: 8rem;
+  margin-top: 7rem;
 }
 
 .wind {
@@ -99,6 +100,11 @@
 
 .weather-forecast {
   margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.forecast-icon {
+  width: 55px;
 }
 
 .loading-container {
@@ -139,5 +145,30 @@
 
   100% {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .city-card {
+    height: 750px;
+    padding: 1rem;
+    width: 350px;
+    font-size: 1.7rem;
+    margin: 0.5rem;
+  }
+
+  .city-temp {
+    font-size: 6rem;
+    margin-top: 1.5rem;
+  }
+
+  .weather-condition {
+    margin-top: 9rem;
+  }
+
+  .weather-forecast {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
   }
 }

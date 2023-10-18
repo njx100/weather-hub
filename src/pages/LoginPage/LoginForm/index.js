@@ -3,15 +3,13 @@ import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { Typography } from "antd";
 import { useNavigate } from "react-router-dom";
 import * as Icon from "react-feather";
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.css";
-import logo from "../../../utilities/153859090/Logo Files/For Web/svg/Color logo - no background.svg"
+import logo from "../../../utilities/153859090/Logo Files/For Web/svg/Color logo - no background.svg";
 
 const { Title } = Typography;
 
-
 const LoginForm = ({ dataAccount }) => {
-  
   const [api, contextHolder] = notification.useNotification();
 
   const [isPassword, setIsPassword] = useState(false);
@@ -21,27 +19,26 @@ const LoginForm = ({ dataAccount }) => {
   sessionStorage.setItem("username", "");
   const navigate = useNavigate();
 
-
   const openNotificationWithIcon = (type) => {
-    console.log('dataAccount :>> ', dataAccount);
     navigate("#");
 
-    if (!dataAccount.some(e => e.username === isUserName)) {
+    if (!dataAccount.some((e) => e.username === isUserName)) {
       api[type]({
         message: `User name does not exist`,
       });
-    } else if (!dataAccount.some(e => e.password === isPassword)) {
-      console.log(isPassword)
+    } else if (!dataAccount.some((e) => e.password === isPassword)) {
       api[type]({
-        message: `Incorrect password` ,
+        message: `Incorrect password`,
       });
-    }}
-    
+    }
+  };
 
   const onFinish = (values) => {
-    console.log(dataAccount);
     dataAccount.some((element) => {
-      if (element.username === values.username && element.password === values.password) {
+      if (
+        element.username === values.username &&
+        element.password === values.password
+      ) {
         sessionStorage.setItem("id", element.id);
         sessionStorage.setItem("username", element.username);
         navigate("/");
@@ -49,12 +46,10 @@ const LoginForm = ({ dataAccount }) => {
     });
   };
 
-
-
   return (
     <div className="card-login-form">
       <div className="logo-signup text-align-center">
-        <img src={logo} style={{width: "50%"}}/>
+        <img src={logo} style={{ width: "50%" }} />
       </div>
       <Form
         name="normal_login"
@@ -66,9 +61,7 @@ const LoginForm = ({ dataAccount }) => {
         <h3 className="title-login-form pd-title">Login to your Account</h3>
         <Form.Item
           name="username"
-          rules={[
-            { required: true, message: "Please input your Username!" },
-          ]}
+          rules={[{ required: true, message: "Please input your Username!" }]}
           className="userName"
         >
           <Input
@@ -87,7 +80,6 @@ const LoginForm = ({ dataAccount }) => {
             prefix={<LockOutlined className="site-form-item-icon" />}
             placeholder="Password"
             onChange={(e) => setIsPassword(e.target.value)}
-
           />
         </Form.Item>
         <Form.Item>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useScrollBlock from "../useScrollBlock/useScrollBlock";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import "./style.css";
@@ -25,13 +25,16 @@ const Header = () => {
     }
   };
 
+  useEffect(() => {
+    showMenu && blockScroll();
+  }, [showMenu]);
+
   return (
     <div className="header">
       {showMenu ? null : (
         <button
           className="menu-btn"
           onClick={() => {
-            console.log("block header");
             setShowMenu(true);
           }}
         >
