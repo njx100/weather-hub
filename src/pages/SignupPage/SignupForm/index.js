@@ -27,15 +27,6 @@ const SignupForm = ({ dataAccount, addUserAccount }) => {
   };
   return (
     <div className="card-login-form">
-      <Button
-        onClick={() => {
-          navigate("/login");
-        }}
-        className="return-login"
-      >
-        <Icon.ArrowLeft size={15} color="#141137" />
-        Login Page
-      </Button>
       <div className="logo-signup text-align-center">
         <img src={logo} style={{width: "50%", backgroundSize: "cover"}}/>
       </div>
@@ -159,9 +150,9 @@ const SignupForm = ({ dataAccount, addUserAccount }) => {
             },
           ]}
         >
-          <Checkbox onChange={() => setIsAccepted((prev) => !prev)}>
+          <Checkbox style={{color:"white"}} onChange={() => setIsAccepted((prev) => !prev)}>
             I have read the{" "}
-            <a className="rules-agreement" href="/#">
+            <a className="text-ques" href="/#">
               agreement
             </a>
           </Checkbox>
@@ -180,41 +171,13 @@ const SignupForm = ({ dataAccount, addUserAccount }) => {
             disabled={!isAccepted}
             type="primary"
             block
-            style={{ background: "#141137", color: "whitesmoke" }}
+            style={{ background: "black", color: "whitesmoke", opacity: 0.8, fontWeight: 700 }}
           >
             Sign up
           </Button>
         </Space>
       </Form>
-      <div className="pd-form pd-login-icon">
-        <p className="text-align-center">- Or sign up with -</p>
-        <div className="row g-2">
-          <div className="col-4">
-            <a
-              href="#"
-              class="bg-facebook-login rounded text-center text-white-force p-3 d-block"
-            >
-              <Icon.Facebook color="#5D82D1" />
-            </a>
-          </div>
-          <div className="col-4">
-            <a
-              href="#"
-              class="bg-github rounded text-center text-white-force p-3 d-block"
-            >
-              <Icon.GitHub color="black" />
-            </a>
-          </div>
-          <div className="col-4">
-            <a
-              href="#"
-              class="bg-twitter rounded text-center text-white-force p-3 d-block"
-            >
-              <Icon.Twitter color="rgb(37,160,237)" />
-            </a>
-          </div>
-        </div>
-      </div>
+    
     </div>
   );
 };

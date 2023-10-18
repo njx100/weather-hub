@@ -84,7 +84,7 @@ const LoginForm = ({ dataAccount }) => {
         </Form.Item>
         <Form.Item>
           <Button
-            style={{ backgroundColor: "#1E2F97", marginBottom: "0.5em" }}
+            style={{ backgroundColor: "black", marginBottom: "0.5em", opacity: 0.8, fontWeight: 700 }}
             type="primary"
             htmlType="submit"
             className="login-form-button"
@@ -94,50 +94,21 @@ const LoginForm = ({ dataAccount }) => {
             Sign in
           </Button>
         </Form.Item>
-      </Form>
-      {/* // Login another  */}
-      <div className="pd-form pd-login-icon">
-        <p className="text-align-center">- Or sign in with -</p>
-        <div className="row g-2">
-          <div className="col-4">
-            <a
-              href="#"
-              class="bg-facebook-login rounded text-center text-white-force p-3 d-block"
+        <div className="pd-form pd-login-icon">
+          <div className="text-align-center text-ques">
+            Don't have an account?{" "}
+            <Button
+              style={{ padding: 0, color: "black", fontWeight: 600 }}
+              type="none"
+              onClick={() => {
+                navigate("/signup");
+              }}
             >
-              <Icon.Facebook color="#5D82D1" />
-            </a>
-          </div>
-          <div className="col-4">
-            <a
-              href="#"
-              class="bg-github rounded text-center text-white-force p-3 d-block"
-            >
-              <Icon.GitHub color="black" />
-            </a>
-          </div>
-          <div className="col-4">
-            <a
-              href="#"
-              class="bg-twitter rounded text-center text-white-force p-3 d-block"
-            >
-              <Icon.Twitter color="rgb(37,160,237)" />
-            </a>
+              Sign Up
+            </Button>
           </div>
         </div>
-      </div>
-      {/* Create new account  */}
-      <div className="text-align-center">
-        Don't have an account?{" "}
-        <Button
-          style={{ padding: 0, color: "#1E2F97", fontWeight: 600 }}
-          type="none"
-          onClick={() => {
-            navigate("/signup");
-          }}
-        >
-          Sign Up
-        </Button>
-      </div>
+      </Form>
       {contextHolder}
     </div>
   );

@@ -20,7 +20,8 @@ const ChangeBackGround = ({ setShowChangeBG, selectedBG, setSelectedBG }) => {
   return (
     <div className="container-bg">
       <div className="change-bg-popup">
-        <button
+        <button 
+          className="hambug-btn"
           onClick={() => {
             allowScroll();
             setShowChangeBG(false);

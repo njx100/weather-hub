@@ -1,13 +1,13 @@
 import LoginForm from "./LoginForm";
 import { useEffect, useContext } from "react";
-import background from "../../utilities/images/background/vecteezy_vector-illustration-of-mountain-landscape-with-deer-and_11154791.jpg";
+// import background from "../../utilities/images/background/vecteezy_vector-illustration-of-mountain-landscape-with-deer-and_11154791.jpg";
 import "./style.css";
 import BackgroundContext from "../../components/BackgroundContext";
 
 const LoginPage = ({ dataAccount, getUserInfo }) => {
   const backgroundCtx = useContext(BackgroundContext);
   const { background } = backgroundCtx;
-  const bgClassName = `middle section ${background}`;
+  const BackgroundState = `style-blur-bgr ${background}`
 
   useEffect(() => {
     getUserInfo();
@@ -15,7 +15,8 @@ const LoginPage = ({ dataAccount, getUserInfo }) => {
 
   return (
     <div className="outer">
-      <div className={bgClassName}>
+      <div className={BackgroundState}></div>
+      <div className="middle section style-blur">
         <LoginForm dataAccount={dataAccount} getUserInfo={getUserInfo} />
       </div>
     </div>

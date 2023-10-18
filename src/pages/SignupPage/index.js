@@ -1,11 +1,23 @@
 import SignupForm from "./SignupForm";
 import "./style.css";
-import background from "../../utilities/images/background/vecteezy_dramatic-sunset-wildlife-landscape-illustration_10226933.jpg";
+import { useContext } from "react";
+import BackgroundContext from "../../components/BackgroundContext";
+
 
 const SignupPage = ({ addUserAccount, dataAccount }) => {
+  const backgroundCtx = useContext(BackgroundContext);
+  const { background } = backgroundCtx;
+
+  const BackgroundState = `style-blur-bgr ${background}`
+
   return (
-    <div className="middle" style={{ backgroundImage: `url(${background})` }}>
-      <SignupForm addUserAccount={addUserAccount} dataAccount={dataAccount} />
+    <div className="outer">
+      <div className={BackgroundState}></div>
+
+
+      <div className="middle style-blur">
+        <SignupForm addUserAccount={addUserAccount} dataAccount={dataAccount} />
+      </div>
     </div>
   );
 };
