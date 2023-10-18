@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/weather-hub/static/css/main.4a8dffe8.css",
-    "main.js": "/weather-hub/static/js/main.b22b2d36.js",
+    "main.js": "/weather-hub/static/js/main.1f183fec.js",
     "static/js/787.bb689d49.chunk.js": "/weather-hub/static/js/787.bb689d49.chunk.js",
     "static/media/vecteezy_dramatic-sunset-wildlife-landscape-illustration_10226933.jpg": "/weather-hub/static/media/vecteezy_dramatic-sunset-wildlife-landscape-illustration_10226933.aae38f8d3c73c66b1aef.jpg",
     "static/media/vecteezy_vector-illustration-of-mountain-landscape-with-deer-and_11154791.jpg": "/weather-hub/static/media/vecteezy_vector-illustration-of-mountain-landscape-with-deer-and_11154791.68ec70491bd9cd3d740d.jpg",
@@ -14,11 +14,11 @@
     "static/media/night.svg": "/weather-hub/static/media/night.7c6f376387d87f4a8dfd.svg",
     "index.html": "/weather-hub/index.html",
     "main.4a8dffe8.css.map": "/weather-hub/static/css/main.4a8dffe8.css.map",
-    "main.b22b2d36.js.map": "/weather-hub/static/js/main.b22b2d36.js.map",
+    "main.1f183fec.js.map": "/weather-hub/static/js/main.1f183fec.js.map",
     "787.bb689d49.chunk.js.map": "/weather-hub/static/js/787.bb689d49.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4a8dffe8.css",
-    "static/js/main.b22b2d36.js"
+    "static/js/main.1f183fec.js"
   ]
 }
