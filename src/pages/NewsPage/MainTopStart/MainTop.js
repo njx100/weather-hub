@@ -1,10 +1,7 @@
 import React from "react";
 import "./style.css";
 function MainTop({ data }) {
-
   const urlImg = data.multimedia[Object.keys(data.multimedia)[0]].url;
-
-  console.log(urlImg);
 
   return (
     <section class="pt-4 pb-0 card-grid">

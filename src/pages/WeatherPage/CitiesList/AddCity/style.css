@@ -1,6 +1,6 @@
 .add-city-card {
-  width: 400px;
-  height: 898px;
+  width: 370px;
+  height: 798px;
   position: relative;
   border-radius: 5rem;
   padding: 1.5rem 2rem;
@@ -37,4 +37,11 @@
 
 .add-city-card:active {
   border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+@media only screen and (max-width: 1400px) {
+  .add-city-card {
+    width: 350px;
+    height: 748px;
+  }
 }

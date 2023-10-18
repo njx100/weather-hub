@@ -36,7 +36,6 @@ const WeatherPage = () => {
   };
 
   const updateCitiesList = async (id, cities) => {
-    console.log(cities);
     id !== "1" && (await axios.put(userInfoApi + "/" + id, cities));
   };
 

@@ -21,3 +21,14 @@ a.api-logo {
 a.api-logo:hover {
   transform: scale(1);
 }
+
+@media only screen and (max-width: 500px) {
+  .footer {
+    flex-direction: column;
+    height: 15vh;
+  }
+
+  a.api-logo {
+    margin: 0rem;
+  }
+}

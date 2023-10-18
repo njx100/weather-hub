@@ -7,7 +7,7 @@ import BackgroundContext from "../../components/BackgroundContext";
 const LoginPage = ({ dataAccount, getUserInfo }) => {
   const backgroundCtx = useContext(BackgroundContext);
   const { background } = backgroundCtx;
-  const bgClassName = `middle section ${background}`;
+  const BackgroundState = `style-blur-bgr ${background}`
 
   useEffect(() => {
     getUserInfo();
@@ -15,7 +15,7 @@ const LoginPage = ({ dataAccount, getUserInfo }) => {
 
   return (
     <div className="outer">
-      <div className="style-blur-bgr" style={{backgroundImage: `url(${background})`}}></div>
+      <div className={BackgroundState}></div>
       <div className="middle section style-blur">
         <LoginForm dataAccount={dataAccount} getUserInfo={getUserInfo} />
       </div>

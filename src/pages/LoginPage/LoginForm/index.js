@@ -20,7 +20,6 @@ const LoginForm = ({ dataAccount }) => {
   const navigate = useNavigate();
 
   const openNotificationWithIcon = (type) => {
-    console.log("dataAccount :>> ", dataAccount);
     navigate("#");
 
     if (!dataAccount.some((e) => e.username === isUserName)) {
@@ -28,7 +27,6 @@ const LoginForm = ({ dataAccount }) => {
         message: `User name does not exist`,
       });
     } else if (!dataAccount.some((e) => e.password === isPassword)) {
-      console.log(isPassword);
       api[type]({
         message: `Incorrect password`,
       });
@@ -36,7 +34,6 @@ const LoginForm = ({ dataAccount }) => {
   };
 
   const onFinish = (values) => {
-    console.log(dataAccount);
     dataAccount.some((element) => {
       if (
         element.username === values.username &&
