@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useScrollBlock from "../useScrollBlock/useScrollBlock";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import "./style.css";
@@ -24,6 +24,10 @@ const Header = () => {
       sessionStorage.setItem("username", "Guest");
     }
   };
+
+  useEffect(() => {
+    showMenu && blockScroll();
+  }, [showMenu]);
 
   return (
     <div className="header">

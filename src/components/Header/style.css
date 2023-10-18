@@ -74,6 +74,7 @@
   transition: all ease-in-out 300ms;
   margin-left: 6rem;
   margin-top: 1.5rem;
+  width: fit-content;
 }
 
 .dashboard a:hover,
@@ -106,4 +107,22 @@ a.nav-item {
 
 .dashboard-footer {
   margin: 2rem;
+}
+
+@media only screen and (max-width: 1400px) {
+  .dashboard {
+    padding-top: 5rem;
+    /* align-items: center; */
+  }
+
+  .dashboard a {
+    font-size: 4rem;
+  }
+
+  .header-logo {
+    position: absolute;
+    width: 300px;
+    bottom: 6rem;
+    left: 12rem;
+  }
 }
