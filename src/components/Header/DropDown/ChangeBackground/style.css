@@ -92,7 +92,7 @@ button {
   .change-bg-popup {
     position: relative;
     width: 70%;
-    height: 90vh;
+    height: 650px;
     background: rgba(255, 255, 255, 0.6);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -103,13 +103,17 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    top: 0;
+    top: -1rem;
     padding-top: 3rem;
+  }
+
+  .container-bg {
+    height: 110vh;
   }
 
   .theme {
     width: 80%;
-    height: auto;
+    height: 150px;
     margin: 0 1.8rem;
   }
 
