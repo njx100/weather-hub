@@ -10,6 +10,7 @@ const AboutPage = () => {
   const { background, setBackground } = backgroundCtx;
 
   useEffect(() => {
+    document.title = "About";
     setBackground("blue-mountain");
   }, []);
 

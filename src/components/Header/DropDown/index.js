@@ -20,12 +20,12 @@ const DropDown = ({ setShowChangeBG, checkSessionStorage }) => {
       ),
       icon: <AiOutlinePicture />,
       key: "1",
-    }, // remember to pass the key prop
+    },
 
     {
       label: (
         <Link to={"/login"} className="dropdown-link">
-          Logout
+          {username === "Guest" ? "Please login!" : "Logout"}
         </Link>
       ),
       icon: <AiOutlineLogout />,

@@ -19,6 +19,7 @@ const NewsPage = () => {
   const [visibleItems, setVisibleItems] = useState(4);
 
   useEffect(() => {
+    document.title = "News";
     const fetchDataNews = async () => {
       setIsLoading(true);
       const response = await axios.get(urlCard);
