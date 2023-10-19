@@ -7,6 +7,7 @@
   min-height: 100vh;
   width: 100%;
   animation: fade-in 2s ease-in;
+  padding-bottom: 3rem;
 }
 
 .morning-mountain {
@@ -18,6 +19,7 @@
   min-height: 100vh;
   width: 100%;
   animation: fade-in 2s ease-in;
+  padding-bottom: 3rem;
 }
 
 .dramatic-sunset {
@@ -29,6 +31,34 @@
   min-height: 100vh;
   width: 100%;
   animation: fade-in 2s ease-in;
+  padding-bottom: 3rem;
+}
+
+.about-container {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  width: 75%;
+  margin-top: 8rem;
+  color: black;
+  font-size: 1.5rem;
+}
+
+.introdution,
+.missions,
+.about-commit,
+.about-contact-us {
+  margin-top: 2rem;
+}
+
+.missions li {
+  margin-top: 1rem;
 }
 
 @keyframes fade-in {
@@ -37,5 +67,23 @@
   }
   100% {
     filter: opacity(1);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .about-container {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    width: 85%;
+    margin-top: 8rem;
+    color: black;
+    font-size: 1.5rem;
   }
 }

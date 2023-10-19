@@ -22,8 +22,12 @@
 }
 
 @media only screen and (max-width: 500px) {
-  .user-dropdown {
+  .dropdown-container {
     left: 65%;
+  }
+
+  .user-dropdown {
+    left: 80%;
     top: 3.6rem;
     font-size: 1.5rem;
   }
@@ -38,9 +42,8 @@
   }
 }
 
-/* @media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
   .dropdown-container {
-    position: relative;
-
+    left: 70%;
   }
-} */
+}
