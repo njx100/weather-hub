@@ -104,13 +104,13 @@ const Header = () => {
       <DropDown
         setShowChangeBG={setShowChangeBG}
         checkSessionStorage={checkSessionStorage}
-        // className="dropdown"
       />
       {showChangeBG && (
         <ChangeBackGround
           setShowChangeBG={setShowChangeBG}
           selectedBG={selectedBG}
           setSelectedBG={setSelectedBG}
+          setShowMenu={setShowMenu}
         />
       )}
     </div>

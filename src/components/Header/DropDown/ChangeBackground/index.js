@@ -4,7 +4,12 @@ import useScrollBlock from "../../../useScrollBlock/useScrollBlock";
 import "./style.css";
 import BackgroundContext from "../../../BackgroundContext";
 
-const ChangeBackGround = ({ setShowChangeBG, selectedBG, setSelectedBG }) => {
+const ChangeBackGround = ({
+  setShowChangeBG,
+  selectedBG,
+  setSelectedBG,
+  setShowMenu,
+}) => {
   const { setBackground } = useContext(BackgroundContext);
   const handleClick = (theme, bgName) => {
     setSelectedBG(theme);
@@ -12,6 +17,7 @@ const ChangeBackGround = ({ setShowChangeBG, selectedBG, setSelectedBG }) => {
   };
   const [blockScroll, allowScroll] = useScrollBlock();
   useEffect(() => {
+    setShowMenu(false);
     blockScroll();
   }, []);
 
