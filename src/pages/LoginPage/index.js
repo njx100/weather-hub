@@ -7,9 +7,10 @@ import BackgroundContext from "../../components/BackgroundContext";
 const LoginPage = ({ dataAccount, getUserInfo }) => {
   const backgroundCtx = useContext(BackgroundContext);
   const { background } = backgroundCtx;
-  const BackgroundState = `style-blur-bgr ${background}`
+  const BackgroundState = `style-blur-bgr ${background}`;
 
   useEffect(() => {
+    document.title = "Login";
     getUserInfo();
   }, []);
 

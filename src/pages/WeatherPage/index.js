@@ -40,6 +40,7 @@ const WeatherPage = () => {
   };
 
   useEffect(() => {
+    document.title = "Weather hub";
     allowScroll();
     setBackground("blue-mountain");
     getUserData(sessionStorage.getItem("id"));
