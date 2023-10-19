@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/weather-hub/static/css/main.4ac73f3e.css",
-    "main.js": "/weather-hub/static/js/main.39adaae0.js",
+    "main.css": "/weather-hub/static/css/main.e77c81ef.css",
+    "main.js": "/weather-hub/static/js/main.3082606f.js",
     "static/js/787.bb689d49.chunk.js": "/weather-hub/static/js/787.bb689d49.chunk.js",
     "static/media/snow.svg": "/weather-hub/static/media/snow.ea60396682505578142d.svg",
     "static/media/partly_cloudy.svg": "/weather-hub/static/media/partly_cloudy.3cc80f2c264bc367508c.svg",
@@ -11,12 +11,12 @@
     "static/media/rain.svg": "/weather-hub/static/media/rain.b99dc426de15c93fd9e3.svg",
     "static/media/night.svg": "/weather-hub/static/media/night.7c6f376387d87f4a8dfd.svg",
     "index.html": "/weather-hub/index.html",
-    "main.4ac73f3e.css.map": "/weather-hub/static/css/main.4ac73f3e.css.map",
-    "main.39adaae0.js.map": "/weather-hub/static/js/main.39adaae0.js.map",
+    "main.e77c81ef.css.map": "/weather-hub/static/css/main.e77c81ef.css.map",
+    "main.3082606f.js.map": "/weather-hub/static/js/main.3082606f.js.map",
     "787.bb689d49.chunk.js.map": "/weather-hub/static/js/787.bb689d49.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ac73f3e.css",
-    "static/js/main.39adaae0.js"
+    "static/css/main.e77c81ef.css",
+    "static/js/main.3082606f.js"
   ]
 }
