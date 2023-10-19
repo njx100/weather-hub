@@ -2,8 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Button, Checkbox, Form, Input, Select, Space } from "antd";
 import "./style.css";
-import swal from "sweetalert";
-import * as Icon from "react-feather";
+import Swal from "sweetalert2";
 import logo from "../../../utilities/153859090/Logo Files/For Web/svg/Color logo - no background.svg";
 const { Option } = Select;
 
@@ -16,14 +15,20 @@ const SignupForm = ({ dataAccount, addUserAccount }) => {
       favCities: [],
     });
     addUserAccount(new_Account);
-
-    swal(
-      "Success",
-      "Congratulations you can now see the weather",
-      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAAB0CAMAAABjROYVAAAAWlBMVEUDm+X///8AleQAmOQAk+O+3PXh8PvL5Pj1+v4AkeP4/P5ntuuRyPDE4fey2PTb7fqay/Ewoeaj0PJZsOqAv+7p9fw9pedPq+mIxe90uuzS6Phksuqt1POJwu8ND0gQAAAE4klEQVRoge2baXOjMAyGjc0VCAmGQpo0+///5nLHh2Qbmzad2dW3nZ3y1JeOVyqJ3mDkP9RgRXfNqmSwKrt2PwC9JnXLCWF0MkYZIX1ZJ9dvg6aXkrN45Mg2/AaE35P0eGja3IjOE8nk1rhynaBF0jITceO2SX4QtGt6O3Hl8trhalmh+ZlQN+JslJytq7VAi2YfcsY2RQg06+O9yNHiPvOG5veTD3K004dpjw3QbP/OvowSw2Jx6NlrZ18Wn3dDi1vAMpfF3rD7hEBT4vgyTcYI4qJgaBW8zNkofLAg9HIQc6AmrtBn4BWSqE836HHrHC2+uECPOs/VgHPVoOnBzIGqxR0Vmh/wVDRT36sK7Q95n8q/b2bonwM2l32qH6FnE7TyDisCoYpqlRpnODQPR87u4KxSeY5C7+EHurgglUo/MGgV7ono6grUyxE/YGjBw5kvp/chU1kPQ5vwCCo6WoUaPyFo+C2KG/HgortMFe7SC6q9rkCmSqW1Du0CkTozikp5HbkG1Z7WXmatMRUqbVRoHnh1kdzvS6T2hQJNwhaK5ZtFK/ibLXdZoW2QM4o/YaYcnlkrQ9MgJv2DMTs5VKYSNMgxyI7VwFyv0gK9BayU3jFmrnx2jeYzNPVHElriTG3/UgEakHXSFmW22leXIDRDS+/dZSiz0JmE3QWot2fQcq4X8wvaPf6CXv2ZqLoAMpdDnaC+7oj1KLOEPzlkbStUy96+i7nEtwnq5wMZ380krNygpnuE/j6MowLKHd85vkILA5MCFz+AScgKNSQNg7tJwKyfcVQD/DDekG6BPtAtpF/Df1+AdNjANOda7LpAMww6MSE5ANVNrPITyxYo9kw3t6oGPgPT9vpYZYYKrlz9FKrZW+PylLLgUNoKz1CiMpT5tHoZM5S10tMXMlQawDRDFaZApQ+IN5pLVN6glX57gfCxFH+I8ubIfF0k/Z2yG+Bupkc/hwnI3EIVeyzQqy6HgC5ucG+w1jeao+a1OQfVDbIecav3E6C5zZa5RsfVDaoOn6KuHD3Ph3NEjhZo1Ksrxb6N2dWZuYW26Es5VDzdQpjOCokQxDWHSXdRU3dVRkhX9Nu+xBcn63ZkWEJiBqSg7tQ9TDEFhZIkvERRmGxPVick22BZgRdjEnNXL0UqK0C36ULt+K7sVSqg4FIRL3Y9mXKpiBTFNmq3UweXi2IszcDFBB+mWv5jQocqhIumFvcOJgsdaDkDCmELc2/ZpUo6eAg+6ZLfZFChbbEtAbDLdCeoW+bDJFyV6QxZMhi5PZgv7dVFegWoSHFvtk6DmrTXk5qN+TCFh+AmpytUtNA2GiSnR40hFsdVKFMUvl1bJEK+67dOURQRm0GZKe3YqOZCG7OTmEjKbS/T99j8Y59ebSq87WVrzYxU3/4C3uCLMlMrk5GHr8xlamVaFsK4Z8PI3LS1Sdx+Cq2tPf2eRvx3jBxoUszvGK44dnRF6B2boW8ZmDl0NAgs3b95CAqWRX7RuJdPgqkvU9W/rNC3jPANVoVsseew4jiW6b3Y2Hcsc7CMe51syABq5Dtq+wwatR0s/9w5VMzr0KHi0bozdx+f7huHqW2nQfE8aY2j6SuRtJVlY3dAo3eMxC/cS8kJ/cnh/xVc1eX0Zw5s+zMHXtbVDqAHdDLpDzqcDvEAaLD9O9C/n243fRcsDooAAAAASUVORK5CYII="
-    );
-    navigate("/login");
+    Swal.fire({
+      icon: 'success',
+      title: 'Congratulations!',
+      text: 'Your account is created!',
+      confirmButtonText: 'OK',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/login");
+      } 
+    })
   };
+
+
+
   return (
     <div className="card-login-form">
       <div className="logo-signup text-align-center">

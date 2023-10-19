@@ -84,7 +84,6 @@ const LoginForm = ({ dataAccount }) => {
         </Form.Item>
         <Form.Item>
           <Button
-            style={{ backgroundColor: "black", marginBottom: "0.5em", opacity: 0.8, fontWeight: 700 }}
             type="primary"
             htmlType="submit"
             className="login-form-button"
@@ -98,7 +97,8 @@ const LoginForm = ({ dataAccount }) => {
           <div className="text-align-center text-ques">
             Don't have an account?{" "}
             <Button
-              style={{ padding: 0, color: "black", fontWeight: 600 }}
+
+              className="login-sign-up-btn"
               type="none"
               onClick={() => {
                 navigate("/signup");

@@ -38,6 +38,34 @@
     color: aliceblue;
     font-weight: 600;
 }
+
+.login-form-button:hover {
+    opacity: 1 !important;
+    font-size: 1em;
+
+}
+
+.login-form-button {
+    background-color: black !important; 
+    margin-bottom:0.5em !important; 
+    opacity: 0.6 !important; 
+    font-weight: 700 !important;
+    transition: all 1s;
+
+}
+
+.login-sign-up-btn {
+    padding: 0;
+    color: black;
+    font-weight: 600;
+    transition: all 1s;
+}
+.login-sign-up-btn:hover {
+    font-size: 1.1em;
+    color: white;
+    text-decoration: underline  !important;
+}
+ 
 @media only screen and (max-width: 600px) {
     .card-login-form {
         width: 100%;
