@@ -192,6 +192,3 @@ hr {
   font-size: 0.8rem !important;
 }
 
-.card:hover {
-  transform: scale(1.02);
-}
