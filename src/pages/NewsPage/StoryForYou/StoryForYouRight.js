@@ -4,7 +4,6 @@ import * as Icon from "react-feather";
 function StoryForYouRight() {
   return (
     <div className="col-lg-3 margin-top-4em">
-    
       <div className="row g-2">
         <div className="col-4">
           <a
@@ -40,8 +39,7 @@ function StoryForYouRight() {
       <div>
         <h4 className="mb-3 mt-4 h4-color">Weather App</h4>
       </div>
-      </div>
-    
+    </div>
   );
 }
 
