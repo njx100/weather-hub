@@ -86,7 +86,9 @@ const NewsPage = () => {
           </section>
         </div>
       ) : (
-        <Circles />
+        <div className="news-loader-container">
+          <Circles width="200" />
+        </div>
       )}
     </div>
   );
